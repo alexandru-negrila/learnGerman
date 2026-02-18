@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
+import { useHighlightSection } from '../hooks/useHighlightSection';
+import { slugify } from '../utils/slugify';
 import verbsData from '../data/verbs.json';
 import PageHeader from '../components/PageHeader';
 import SectionCard from '../components/SectionCard';
 
 export default function Verbs() {
   const { t } = useLanguage();
+  const highlightId = useHighlightSection();
   const [selectedTense, setSelectedTense] = useState('Präsens');
   const [search, setSearch] = useState('');
 
@@ -59,6 +62,8 @@ export default function Verbs() {
         {filteredSections.map((section, si) => (
           <SectionCard
             key={si}
+            id={slugify(section.title)}
+            highlighted={highlightId === slugify(section.title)}
             title={section.title}
             description={section.description}
           >

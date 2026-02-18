@@ -1,4 +1,6 @@
 import { useLanguage } from '../hooks/useLanguage';
+import { useHighlightSection } from '../hooks/useHighlightSection';
+import { slugify } from '../utils/slugify';
 import pronounsData from '../data/pronouns.json';
 import PageHeader from '../components/PageHeader';
 import SectionCard from '../components/SectionCard';
@@ -6,6 +8,7 @@ import DataTable from '../components/DataTable';
 
 export default function Pronouns() {
   const { t } = useLanguage();
+  const highlightId = useHighlightSection();
 
   return (
     <div>
@@ -19,6 +22,8 @@ export default function Pronouns() {
         {pronounsData.sections.map((section, i) => (
           <SectionCard
             key={i}
+            id={slugify(section.title)}
+            highlighted={highlightId === slugify(section.title)}
             title={section.title}
             description={section.description}
           >

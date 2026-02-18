@@ -1,4 +1,6 @@
 import { useLanguage } from '../hooks/useLanguage';
+import { useHighlightSection } from '../hooks/useHighlightSection';
+import { slugify } from '../utils/slugify';
 import articlesData from '../data/articles.json';
 import PageHeader from '../components/PageHeader';
 import SectionCard from '../components/SectionCard';
@@ -12,6 +14,7 @@ const genderColors = {
 
 export default function Articles() {
   const { t } = useLanguage();
+  const highlightId = useHighlightSection();
 
   return (
     <div>
@@ -26,7 +29,7 @@ export default function Articles() {
           // Table sections (with headers/rows)
           if (section.headers && section.rows) {
             return (
-              <SectionCard key={i} title={section.title} description={section.description}>
+              <SectionCard key={i} id={slugify(section.title)} highlighted={highlightId === slugify(section.title)} title={section.title} description={section.description}>
                 <DataTable headers={section.headers} rows={section.rows} highlightFirst />
               </SectionCard>
             );
@@ -35,7 +38,7 @@ export default function Articles() {
           // Case rules section
           if (section.rules && section.rules[0]?.case) {
             return (
-              <SectionCard key={i} title={section.title} description={section.description}>
+              <SectionCard key={i} id={slugify(section.title)} highlighted={highlightId === slugify(section.title)} title={section.title} description={section.description}>
                 <div className="space-y-2">
                   {section.rules.map((rule, ri) => (
                     <div key={ri} className="bg-gray-50 rounded-lg p-3 border border-gray-100">
@@ -56,7 +59,7 @@ export default function Articles() {
           // Gender tips section
           if (section.genderTips) {
             return (
-              <SectionCard key={i} title={section.title} description={section.description}>
+              <SectionCard key={i} id={slugify(section.title)} highlighted={highlightId === slugify(section.title)} title={section.title} description={section.description}>
                 <div className="space-y-3">
                   {section.genderTips.map((tip, ti) => (
                     <div key={ti} className={`rounded-lg border p-3 ${genderColors[tip.color]}`}>
