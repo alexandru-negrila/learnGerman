@@ -81,7 +81,18 @@ export default function Verbs() {
                 <tbody>
                   {section.verbs.map((verb, vi) => (
                     <tr key={vi} className={`border-b border-gray-50 ${vi % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} hover:bg-blue-50/30 transition-colors`}>
-                      <td className="px-3 py-2 font-bold text-blue-700 whitespace-nowrap">{verb.infinitive}</td>
+                      <td className="px-3 py-2 font-bold text-blue-700 whitespace-nowrap">
+                        {verb.infinitive}
+                        {verb.auxiliary && (
+                          <span className={`ml-1.5 text-[10px] font-semibold px-1.5 py-0.5 rounded ${
+                            verb.auxiliary === 'sein'
+                              ? 'bg-green-100 text-green-700'
+                              : 'bg-amber-100 text-amber-700'
+                          }`}>
+                            {verb.auxiliary}
+                          </span>
+                        )}
+                      </td>
                       <td className="px-3 py-2 text-gray-400 text-xs whitespace-nowrap">{verb.english}</td>
                       {verb.conjugations[selectedTense].map((form, fi) => (
                         <td key={fi} className="px-3 py-2 text-gray-800 whitespace-nowrap">{form}</td>

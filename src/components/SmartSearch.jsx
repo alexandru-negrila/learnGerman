@@ -1,7 +1,8 @@
-import { useState, useRef, useCallback, useMemo } from 'react';
+import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../hooks/useLanguage';
 import { useClickOutside } from '../hooks/useClickOutside';
+import { useDebounce } from '../hooks/useDebounce';
 import { filterEntries } from '../data/searchIndex';
 
 export default function SmartSearch() {
@@ -12,7 +13,10 @@ export default function SmartSearch() {
   const [isMobileExpanded, setIsMobileExpanded] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const containerRef = useRef(null);
-  const inputRef = useRef(null);
+  const desktopInputRef = useRef(null);
+  const mobileInputRef = useRef(null);
+
+  const debouncedQuery = useDebounce(query, 150);
 
   const close = useCallback(() => {
     setIsOpen(false);
@@ -23,7 +27,36 @@ export default function SmartSearch() {
 
   useClickOutside(containerRef, close);
 
-  const results = useMemo(() => filterEntries(query), [query]);
+  const results = useMemo(() => filterEntries(debouncedQuery), [debouncedQuery]);
+
+  // Global keyboard shortcuts: Ctrl+K or / to focus search
+  useEffect(() => {
+    const handleGlobalKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        if (window.innerWidth < 640) {
+          setIsMobileExpanded(true);
+          setTimeout(() => mobileInputRef.current?.focus(), 50);
+        } else {
+          desktopInputRef.current?.focus();
+        }
+      } else if (
+        e.key === '/' &&
+        !['INPUT', 'TEXTAREA'].includes(e.target.tagName) &&
+        !e.target.isContentEditable
+      ) {
+        e.preventDefault();
+        if (window.innerWidth < 640) {
+          setIsMobileExpanded(true);
+          setTimeout(() => mobileInputRef.current?.focus(), 50);
+        } else {
+          desktopInputRef.current?.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', handleGlobalKeyDown);
+    return () => document.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
 
   const handleSelect = useCallback((entry) => {
     navigate(`${entry.link}?highlight=${entry.sectionId}`);
@@ -33,7 +66,8 @@ export default function SmartSearch() {
   const handleKeyDown = useCallback((e) => {
     if (e.key === 'Escape') {
       close();
-      inputRef.current?.blur();
+      desktopInputRef.current?.blur();
+      mobileInputRef.current?.blur();
       return;
     }
     if (!isOpen || results.length === 0) return;
@@ -59,32 +93,35 @@ export default function SmartSearch() {
 
   const openMobile = useCallback(() => {
     setIsMobileExpanded(true);
-    setTimeout(() => inputRef.current?.focus(), 50);
+    setTimeout(() => mobileInputRef.current?.focus(), 50);
   }, []);
 
-  const searchInput = (
-    <input
-      ref={inputRef}
-      type="text"
-      value={query}
-      onChange={handleChange}
-      onKeyDown={handleKeyDown}
-      onFocus={() => query.trim().length > 0 && setIsOpen(true)}
-      placeholder={t('searchPlaceholder') || 'Search words...'}
-      className="w-full sm:w-48 lg:w-56 px-3 py-1.5 rounded-lg border border-gray-200 text-sm outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-100 bg-white"
-      role="combobox"
-      aria-expanded={isOpen}
-      aria-controls="smart-search-results"
-      aria-activedescendant={highlightedIndex >= 0 ? results[highlightedIndex]?.id : undefined}
-      autoComplete="off"
-    />
-  );
+  const sharedInputProps = {
+    type: 'text',
+    value: query,
+    onChange: handleChange,
+    onKeyDown: handleKeyDown,
+    onFocus: () => query.trim().length > 0 && setIsOpen(true),
+    placeholder: t('searchPlaceholder') || 'Search words...',
+    role: 'combobox',
+    'aria-expanded': isOpen,
+    'aria-controls': 'smart-search-results',
+    'aria-activedescendant': highlightedIndex >= 0 ? results[highlightedIndex]?.id : undefined,
+    autoComplete: 'off',
+  };
 
   return (
     <div ref={containerRef} className="relative">
-      {/* Desktop input */}
-      <div className="hidden sm:block">
-        {searchInput}
+      {/* Desktop input with Ctrl+K hint badge */}
+      <div className="hidden sm:block relative">
+        <input
+          {...sharedInputProps}
+          ref={desktopInputRef}
+          className="w-full sm:w-48 lg:w-56 pl-3 pr-14 py-1.5 rounded-lg border border-gray-200 text-sm outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-100 bg-white"
+        />
+        <kbd className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 flex items-center text-[10px] text-gray-400 select-none">
+          <span className="px-1 py-0.5 rounded border border-gray-200 bg-gray-50 leading-none font-sans">⌃K</span>
+        </kbd>
       </div>
 
       {/* Mobile: icon or expanded overlay */}
@@ -94,7 +131,11 @@ export default function SmartSearch() {
             <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            {searchInput}
+            <input
+              {...sharedInputProps}
+              ref={mobileInputRef}
+              className="flex-1 px-3 py-1.5 rounded-lg border border-gray-200 text-sm outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-100 bg-white"
+            />
             <button
               onClick={close}
               className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer bg-white border-0 shrink-0"
