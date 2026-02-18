@@ -18,9 +18,9 @@
 words × 1.3 = estimated tokens
 
 ## Tech Stack
-- **Framework**: React 18 + Vite
-- **Styling**: TailwindCSS
-- **Routing**: React Router v6
+- **Framework**: React 19 + Vite 7
+- **Styling**: TailwindCSS v4
+- **Routing**: React Router v7
 - **Data**: JSON files in `/src/data/` (no database)
 - **Language**: JavaScript (JSX)
 - **Package Manager**: npm
@@ -31,15 +31,17 @@ words × 1.3 = estimated tokens
 - Components are data-driven — adding new content requires zero code changes
 - Mobile-first responsive design
 - No backend, no database, fully static SPA
+- EN/RO language switch via `translations.json` and `useLanguage` hook
 
 ## Key Directories
 ```
 src/
-├── data/          # All German language JSON data files
-├── components/    # Reusable UI components
-├── pages/         # Route-level page components
-├── hooks/         # Custom React hooks
+├── data/          # All German language JSON data files (8 files)
+├── components/    # Reusable UI components (Layout, DataTable, SectionCard, PageHeader)
+├── pages/         # Route-level page components (9 pages)
+├── hooks/         # Custom React hooks (useLanguage)
 └── utils/         # Helper functions
+memory-bank/       # KRIS documentation system
 ```
 
 ## Development Commands
@@ -49,6 +51,12 @@ npm run dev        # Start dev server
 npm run build      # Production build
 npm run preview    # Preview production build
 ```
+
+## Deployment (Vercel)
+- Framework preset: Vite
+- Build command: `npm run build`
+- Output directory: `dist`
+- No environment variables needed
 
 ## Non-Negotiable Directives
 1. Read complete files before modifying
@@ -63,3 +71,4 @@ npm run preview    # Preview production build
 - [ ] Mobile responsive
 - [ ] Navigation works for all routes
 - [ ] No console errors
+- [ ] `npm run build` passes
