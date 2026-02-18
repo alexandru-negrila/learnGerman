@@ -1,0 +1,345 @@
+{
+  "meta": {
+    "title": "German Verbs & Conjugations",
+    "description": "The most commonly used German verbs with full conjugation tables",
+    "icon": "📝"
+  },
+  "tenses": ["Präsens", "Präteritum", "Perfekt"],
+  "pronouns": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+  "sections": [
+    {
+      "title": "Essential Verbs (sein, haben, werden)",
+      "description": "The three most important German verbs — used on their own and as auxiliaries",
+      "verbs": [
+        {
+          "infinitive": "sein",
+          "english": "to be",
+          "auxiliary": "sein",
+          "conjugations": {
+            "Präsens": ["bin", "bist", "ist", "sind", "seid", "sind"],
+            "Präteritum": ["war", "warst", "war", "waren", "wart", "waren"],
+            "Perfekt": ["bin gewesen", "bist gewesen", "ist gewesen", "sind gewesen", "seid gewesen", "sind gewesen"]
+          }
+        },
+        {
+          "infinitive": "haben",
+          "english": "to have",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["habe", "hast", "hat", "haben", "habt", "haben"],
+            "Präteritum": ["hatte", "hattest", "hatte", "hatten", "hattet", "hatten"],
+            "Perfekt": ["habe gehabt", "hast gehabt", "hat gehabt", "haben gehabt", "habt gehabt", "haben gehabt"]
+          }
+        },
+        {
+          "infinitive": "werden",
+          "english": "to become",
+          "auxiliary": "sein",
+          "conjugations": {
+            "Präsens": ["werde", "wirst", "wird", "werden", "werdet", "werden"],
+            "Präteritum": ["wurde", "wurdest", "wurde", "wurden", "wurdet", "wurden"],
+            "Perfekt": ["bin geworden", "bist geworden", "ist geworden", "sind geworden", "seid geworden", "sind geworden"]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Modal Verbs",
+      "description": "Verbs that modify the meaning of the main verb",
+      "verbs": [
+        {
+          "infinitive": "können",
+          "english": "can / to be able to",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["kann", "kannst", "kann", "können", "könnt", "können"],
+            "Präteritum": ["konnte", "konntest", "konnte", "konnten", "konntet", "konnten"],
+            "Perfekt": ["habe gekonnt", "hast gekonnt", "hat gekonnt", "haben gekonnt", "habt gekonnt", "haben gekonnt"]
+          }
+        },
+        {
+          "infinitive": "müssen",
+          "english": "must / to have to",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["muss", "musst", "muss", "müssen", "müsst", "müssen"],
+            "Präteritum": ["musste", "musstest", "musste", "mussten", "musstet", "mussten"],
+            "Perfekt": ["habe gemusst", "hast gemusst", "hat gemusst", "haben gemusst", "habt gemusst", "haben gemusst"]
+          }
+        },
+        {
+          "infinitive": "wollen",
+          "english": "to want",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["will", "willst", "will", "wollen", "wollt", "wollen"],
+            "Präteritum": ["wollte", "wolltest", "wollte", "wollten", "wolltet", "wollten"],
+            "Perfekt": ["habe gewollt", "hast gewollt", "hat gewollt", "haben gewollt", "habt gewollt", "haben gewollt"]
+          }
+        },
+        {
+          "infinitive": "sollen",
+          "english": "should / to be supposed to",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["soll", "sollst", "soll", "sollen", "sollt", "sollen"],
+            "Präteritum": ["sollte", "solltest", "sollte", "sollten", "solltet", "sollten"],
+            "Perfekt": ["habe gesollt", "hast gesollt", "hat gesollt", "haben gesollt", "habt gesollt", "haben gesollt"]
+          }
+        },
+        {
+          "infinitive": "dürfen",
+          "english": "may / to be allowed to",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["darf", "darfst", "darf", "dürfen", "dürft", "dürfen"],
+            "Präteritum": ["durfte", "durftest", "durfte", "durften", "durftet", "durften"],
+            "Perfekt": ["habe gedurft", "hast gedurft", "hat gedurft", "haben gedurft", "habt gedurft", "haben gedurft"]
+          }
+        },
+        {
+          "infinitive": "mögen",
+          "english": "to like",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["mag", "magst", "mag", "mögen", "mögt", "mögen"],
+            "Präteritum": ["mochte", "mochtest", "mochte", "mochten", "mochtet", "mochten"],
+            "Perfekt": ["habe gemocht", "hast gemocht", "hat gemocht", "haben gemocht", "habt gemocht", "haben gemocht"]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Common Regular Verbs",
+      "description": "Frequently used regular (weak) verbs",
+      "verbs": [
+        {
+          "infinitive": "machen",
+          "english": "to make / to do",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["mache", "machst", "macht", "machen", "macht", "machen"],
+            "Präteritum": ["machte", "machtest", "machte", "machten", "machtet", "machten"],
+            "Perfekt": ["habe gemacht", "hast gemacht", "hat gemacht", "haben gemacht", "habt gemacht", "haben gemacht"]
+          }
+        },
+        {
+          "infinitive": "spielen",
+          "english": "to play",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["spiele", "spielst", "spielt", "spielen", "spielt", "spielen"],
+            "Präteritum": ["spielte", "spieltest", "spielte", "spielten", "spieltet", "spielten"],
+            "Perfekt": ["habe gespielt", "hast gespielt", "hat gespielt", "haben gespielt", "habt gespielt", "haben gespielt"]
+          }
+        },
+        {
+          "infinitive": "lernen",
+          "english": "to learn",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["lerne", "lernst", "lernt", "lernen", "lernt", "lernen"],
+            "Präteritum": ["lernte", "lerntest", "lernte", "lernten", "lerntet", "lernten"],
+            "Perfekt": ["habe gelernt", "hast gelernt", "hat gelernt", "haben gelernt", "habt gelernt", "haben gelernt"]
+          }
+        },
+        {
+          "infinitive": "arbeiten",
+          "english": "to work",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["arbeite", "arbeitest", "arbeitet", "arbeiten", "arbeitet", "arbeiten"],
+            "Präteritum": ["arbeitete", "arbeitetest", "arbeitete", "arbeiteten", "arbeitetet", "arbeiteten"],
+            "Perfekt": ["habe gearbeitet", "hast gearbeitet", "hat gearbeitet", "haben gearbeitet", "habt gearbeitet", "haben gearbeitet"]
+          }
+        },
+        {
+          "infinitive": "wohnen",
+          "english": "to live (reside)",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["wohne", "wohnst", "wohnt", "wohnen", "wohnt", "wohnen"],
+            "Präteritum": ["wohnte", "wohntest", "wohnte", "wohnten", "wohntet", "wohnten"],
+            "Perfekt": ["habe gewohnt", "hast gewohnt", "hat gewohnt", "haben gewohnt", "habt gewohnt", "haben gewohnt"]
+          }
+        },
+        {
+          "infinitive": "kaufen",
+          "english": "to buy",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["kaufe", "kaufst", "kauft", "kaufen", "kauft", "kaufen"],
+            "Präteritum": ["kaufte", "kauftest", "kaufte", "kauften", "kauftet", "kauften"],
+            "Perfekt": ["habe gekauft", "hast gekauft", "hat gekauft", "haben gekauft", "habt gekauft", "haben gekauft"]
+          }
+        },
+        {
+          "infinitive": "brauchen",
+          "english": "to need",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["brauche", "brauchst", "braucht", "brauchen", "braucht", "brauchen"],
+            "Präteritum": ["brauchte", "brauchtest", "brauchte", "brauchten", "brauchtet", "brauchten"],
+            "Perfekt": ["habe gebraucht", "hast gebraucht", "hat gebraucht", "haben gebraucht", "habt gebraucht", "haben gebraucht"]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Common Irregular Verbs",
+      "description": "Frequently used irregular (strong) verbs",
+      "verbs": [
+        {
+          "infinitive": "gehen",
+          "english": "to go",
+          "auxiliary": "sein",
+          "conjugations": {
+            "Präsens": ["gehe", "gehst", "geht", "gehen", "geht", "gehen"],
+            "Präteritum": ["ging", "gingst", "ging", "gingen", "gingt", "gingen"],
+            "Perfekt": ["bin gegangen", "bist gegangen", "ist gegangen", "sind gegangen", "seid gegangen", "sind gegangen"]
+          }
+        },
+        {
+          "infinitive": "kommen",
+          "english": "to come",
+          "auxiliary": "sein",
+          "conjugations": {
+            "Präsens": ["komme", "kommst", "kommt", "kommen", "kommt", "kommen"],
+            "Präteritum": ["kam", "kamst", "kam", "kamen", "kamt", "kamen"],
+            "Perfekt": ["bin gekommen", "bist gekommen", "ist gekommen", "sind gekommen", "seid gekommen", "sind gekommen"]
+          }
+        },
+        {
+          "infinitive": "sehen",
+          "english": "to see",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["sehe", "siehst", "sieht", "sehen", "seht", "sehen"],
+            "Präteritum": ["sah", "sahst", "sah", "sahen", "saht", "sahen"],
+            "Perfekt": ["habe gesehen", "hast gesehen", "hat gesehen", "haben gesehen", "habt gesehen", "haben gesehen"]
+          }
+        },
+        {
+          "infinitive": "geben",
+          "english": "to give",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["gebe", "gibst", "gibt", "geben", "gebt", "geben"],
+            "Präteritum": ["gab", "gabst", "gab", "gaben", "gabt", "gaben"],
+            "Perfekt": ["habe gegeben", "hast gegeben", "hat gegeben", "haben gegeben", "habt gegeben", "haben gegeben"]
+          }
+        },
+        {
+          "infinitive": "nehmen",
+          "english": "to take",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["nehme", "nimmst", "nimmt", "nehmen", "nehmt", "nehmen"],
+            "Präteritum": ["nahm", "nahmst", "nahm", "nahmen", "nahmt", "nahmen"],
+            "Perfekt": ["habe genommen", "hast genommen", "hat genommen", "haben genommen", "habt genommen", "haben genommen"]
+          }
+        },
+        {
+          "infinitive": "sprechen",
+          "english": "to speak",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["spreche", "sprichst", "spricht", "sprechen", "sprecht", "sprechen"],
+            "Präteritum": ["sprach", "sprachst", "sprach", "sprachen", "spracht", "sprachen"],
+            "Perfekt": ["habe gesprochen", "hast gesprochen", "hat gesprochen", "haben gesprochen", "habt gesprochen", "haben gesprochen"]
+          }
+        },
+        {
+          "infinitive": "fahren",
+          "english": "to drive / to travel",
+          "auxiliary": "sein",
+          "conjugations": {
+            "Präsens": ["fahre", "fährst", "fährt", "fahren", "fahrt", "fahren"],
+            "Präteritum": ["fuhr", "fuhrst", "fuhr", "fuhren", "fuhrt", "fuhren"],
+            "Perfekt": ["bin gefahren", "bist gefahren", "ist gefahren", "sind gefahren", "seid gefahren", "sind gefahren"]
+          }
+        },
+        {
+          "infinitive": "essen",
+          "english": "to eat",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["esse", "isst", "isst", "essen", "esst", "essen"],
+            "Präteritum": ["aß", "aßt", "aß", "aßen", "aßt", "aßen"],
+            "Perfekt": ["habe gegessen", "hast gegessen", "hat gegessen", "haben gegessen", "habt gegessen", "haben gegessen"]
+          }
+        },
+        {
+          "infinitive": "trinken",
+          "english": "to drink",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["trinke", "trinkst", "trinkt", "trinken", "trinkt", "trinken"],
+            "Präteritum": ["trank", "trankst", "trank", "tranken", "trankt", "tranken"],
+            "Perfekt": ["habe getrunken", "hast getrunken", "hat getrunken", "haben getrunken", "habt getrunken", "haben getrunken"]
+          }
+        },
+        {
+          "infinitive": "lesen",
+          "english": "to read",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["lese", "liest", "liest", "lesen", "lest", "lesen"],
+            "Präteritum": ["las", "last", "las", "lasen", "last", "lasen"],
+            "Perfekt": ["habe gelesen", "hast gelesen", "hat gelesen", "haben gelesen", "habt gelesen", "haben gelesen"]
+          }
+        },
+        {
+          "infinitive": "schreiben",
+          "english": "to write",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["schreibe", "schreibst", "schreibt", "schreiben", "schreibt", "schreiben"],
+            "Präteritum": ["schrieb", "schriebst", "schrieb", "schrieben", "schriebt", "schrieben"],
+            "Perfekt": ["habe geschrieben", "hast geschrieben", "hat geschrieben", "haben geschrieben", "habt geschrieben", "haben geschrieben"]
+          }
+        },
+        {
+          "infinitive": "schlafen",
+          "english": "to sleep",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["schlafe", "schläfst", "schläft", "schlafen", "schlaft", "schlafen"],
+            "Präteritum": ["schlief", "schliefst", "schlief", "schliefen", "schlieft", "schliefen"],
+            "Perfekt": ["habe geschlafen", "hast geschlafen", "hat geschlafen", "haben geschlafen", "habt geschlafen", "haben geschlafen"]
+          }
+        },
+        {
+          "infinitive": "finden",
+          "english": "to find",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["finde", "findest", "findet", "finden", "findet", "finden"],
+            "Präteritum": ["fand", "fandest", "fand", "fanden", "fandet", "fanden"],
+            "Perfekt": ["habe gefunden", "hast gefunden", "hat gefunden", "haben gefunden", "habt gefunden", "haben gefunden"]
+          }
+        },
+        {
+          "infinitive": "wissen",
+          "english": "to know (a fact)",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["weiß", "weißt", "weiß", "wissen", "wisst", "wissen"],
+            "Präteritum": ["wusste", "wusstest", "wusste", "wussten", "wusstet", "wussten"],
+            "Perfekt": ["habe gewusst", "hast gewusst", "hat gewusst", "haben gewusst", "habt gewusst", "haben gewusst"]
+          }
+        },
+        {
+          "infinitive": "denken",
+          "english": "to think",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["denke", "denkst", "denkt", "denken", "denkt", "denken"],
+            "Präteritum": ["dachte", "dachtest", "dachte", "dachten", "dachtet", "dachten"],
+            "Perfekt": ["habe gedacht", "hast gedacht", "hat gedacht", "haben gedacht", "habt gedacht", "haben gedacht"]
+          }
+        }
+      ]
+    }
+  ]
+}

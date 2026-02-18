@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Articles & Cases",
+    "description": "German definite/indefinite articles and case declension tables",
+    "icon": "📋"
+  },
+  "sections": [
+    {
+      "title": "Definite Articles (the)",
+      "description": "der, die, das declined through all four cases",
+      "headers": ["Maskulin", "Feminin", "Neutrum", "Plural"],
+      "rows": [
+        { "label": "Nominativ (subject)", "cells": ["der", "die", "das", "die"] },
+        { "label": "Akkusativ (direct obj.)", "cells": ["den", "die", "das", "die"] },
+        { "label": "Dativ (indirect obj.)", "cells": ["dem", "der", "dem", "den (+n)"] },
+        { "label": "Genitiv (possession)", "cells": ["des (+s/es)", "der", "des (+s/es)", "der"] }
+      ]
+    },
+    {
+      "title": "Indefinite Articles (a/an)",
+      "description": "ein, eine declined through cases (no plural form)",
+      "headers": ["Maskulin", "Feminin", "Neutrum", "Plural (kein)"],
+      "rows": [
+        { "label": "Nominativ", "cells": ["ein", "eine", "ein", "keine"] },
+        { "label": "Akkusativ", "cells": ["einen", "eine", "ein", "keine"] },
+        { "label": "Dativ", "cells": ["einem", "einer", "einem", "keinen (+n)"] },
+        { "label": "Genitiv", "cells": ["eines (+s/es)", "einer", "eines (+s/es)", "keiner"] }
+      ]
+    },
+    {
+      "title": "When to Use Each Case",
+      "description": "Quick reference for case usage",
+      "rules": [
+        {
+          "case": "Nominativ",
+          "question": "Wer? Was? (Who? What?)",
+          "usage": "Subject of the sentence",
+          "example": "Der Mann liest ein Buch.",
+          "exampleEn": "The man reads a book."
+        },
+        {
+          "case": "Akkusativ",
+          "question": "Wen? Was? (Whom? What?)",
+          "usage": "Direct object, after Akk. prepositions, movement (Wechselpräp.)",
+          "example": "Ich sehe den Mann.",
+          "exampleEn": "I see the man."
+        },
+        {
+          "case": "Dativ",
+          "question": "Wem? (To whom?)",
+          "usage": "Indirect object, after Dat. prepositions, location (Wechselpräp.)",
+          "example": "Ich gebe dem Mann das Buch.",
+          "exampleEn": "I give the man the book."
+        },
+        {
+          "case": "Genitiv",
+          "question": "Wessen? (Whose?)",
+          "usage": "Possession, after Gen. prepositions",
+          "example": "Das Buch des Mannes ist alt.",
+          "exampleEn": "The man's book is old."
+        }
+      ]
+    },
+    {
+      "title": "Adjective Endings (after definite article)",
+      "description": "Weak declension — used after der/die/das",
+      "headers": ["Maskulin", "Feminin", "Neutrum", "Plural"],
+      "rows": [
+        { "label": "Nominativ", "cells": ["-e", "-e", "-e", "-en"] },
+        { "label": "Akkusativ", "cells": ["-en", "-e", "-e", "-en"] },
+        { "label": "Dativ", "cells": ["-en", "-en", "-en", "-en"] },
+        { "label": "Genitiv", "cells": ["-en", "-en", "-en", "-en"] }
+      ]
+    },
+    {
+      "title": "Adjective Endings (after indefinite article)",
+      "description": "Mixed declension — used after ein/eine/kein",
+      "headers": ["Maskulin", "Feminin", "Neutrum", "Plural (kein)"],
+      "rows": [
+        { "label": "Nominativ", "cells": ["-er", "-e", "-es", "-en"] },
+        { "label": "Akkusativ", "cells": ["-en", "-e", "-es", "-en"] },
+        { "label": "Dativ", "cells": ["-en", "-en", "-en", "-en"] },
+        { "label": "Genitiv", "cells": ["-en", "-en", "-en", "-en"] }
+      ]
+    },
+    {
+      "title": "Adjective Endings (no article)",
+      "description": "Strong declension — used when there's no article",
+      "headers": ["Maskulin", "Feminin", "Neutrum", "Plural"],
+      "rows": [
+        { "label": "Nominativ", "cells": ["-er", "-e", "-es", "-e"] },
+        { "label": "Akkusativ", "cells": ["-en", "-e", "-es", "-e"] },
+        { "label": "Dativ", "cells": ["-em", "-er", "-em", "-en"] },
+        { "label": "Genitiv", "cells": ["-en", "-er", "-en", "-er"] }
+      ]
+    },
+    {
+      "title": "Gender Patterns (der/die/das Tips)",
+      "description": "Common noun ending patterns that help predict gender",
+      "genderTips": [
+        {
+          "gender": "Maskulin (der)",
+          "color": "blue",
+          "endings": ["-er (der Lehrer)", "-ling (der Frühling)", "-ismus (der Tourismus)", "-or (der Motor)", "-ig (der Honig)", "-ent (der Student)"],
+          "categories": ["Days, months, seasons", "Car brands", "Alcoholic drinks (except Bier)"]
+        },
+        {
+          "gender": "Feminin (die)",
+          "color": "red",
+          "endings": ["-ung (die Zeitung)", "-heit (die Freiheit)", "-keit (die Möglichkeit)", "-schaft (die Freundschaft)", "-tion (die Nation)", "-ie (die Energie)", "-ei (die Bäckerei)", "-tät (die Universität)"],
+          "categories": ["Numbers used as nouns", "Most flowers", "Most trees"]
+        },
+        {
+          "gender": "Neutrum (das)",
+          "color": "green",
+          "endings": ["-chen (das Mädchen)", "-lein (das Fräulein)", "-ment (das Dokument)", "-um (das Museum)", "-nis (das Ergebnis)"],
+          "categories": ["Infinitives used as nouns (das Essen)", "Most metals", "Colors used as nouns"]
+        }
+      ]
+    }
+  ]
+}

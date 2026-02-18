@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "Numbers & Time",
+    "description": "German number system, ordinal numbers, and time expressions",
+    "icon": "🔢"
+  },
+  "sections": [
+    {
+      "title": "Cardinal Numbers (0-20)",
+      "items": [
+        { "number": 0, "german": "null" },
+        { "number": 1, "german": "eins" },
+        { "number": 2, "german": "zwei" },
+        { "number": 3, "german": "drei" },
+        { "number": 4, "german": "vier" },
+        { "number": 5, "german": "fünf" },
+        { "number": 6, "german": "sechs" },
+        { "number": 7, "german": "sieben" },
+        { "number": 8, "german": "acht" },
+        { "number": 9, "german": "neun" },
+        { "number": 10, "german": "zehn" },
+        { "number": 11, "german": "elf" },
+        { "number": 12, "german": "zwölf" },
+        { "number": 13, "german": "dreizehn" },
+        { "number": 14, "german": "vierzehn" },
+        { "number": 15, "german": "fünfzehn" },
+        { "number": 16, "german": "sechzehn" },
+        { "number": 17, "german": "siebzehn" },
+        { "number": 18, "german": "achtzehn" },
+        { "number": 19, "german": "neunzehn" },
+        { "number": 20, "german": "zwanzig" }
+      ]
+    },
+    {
+      "title": "Cardinal Numbers (tens & hundreds)",
+      "items": [
+        { "number": 21, "german": "einundzwanzig", "note": "Pattern: ones + und + tens" },
+        { "number": 30, "german": "dreißig" },
+        { "number": 40, "german": "vierzig" },
+        { "number": 50, "german": "fünfzig" },
+        { "number": 60, "german": "sechzig" },
+        { "number": 70, "german": "siebzig" },
+        { "number": 80, "german": "achtzig" },
+        { "number": 90, "german": "neunzig" },
+        { "number": 100, "german": "(ein)hundert" },
+        { "number": 200, "german": "zweihundert" },
+        { "number": 1000, "german": "(ein)tausend" },
+        { "number": 1000000, "german": "eine Million" }
+      ],
+      "rule": "German numbers are read 'backwards': 42 = zweiundvierzig (two-and-forty)"
+    },
+    {
+      "title": "Ordinal Numbers",
+      "description": "Add -te (1-19) or -ste (20+) to the cardinal number",
+      "items": [
+        { "number": "1st", "german": "erste", "note": "irregular" },
+        { "number": "2nd", "german": "zweite" },
+        { "number": "3rd", "german": "dritte", "note": "irregular" },
+        { "number": "4th", "german": "vierte" },
+        { "number": "5th", "german": "fünfte" },
+        { "number": "6th", "german": "sechste" },
+        { "number": "7th", "german": "sieb(en)te", "note": "irregular" },
+        { "number": "8th", "german": "achte", "note": "irregular" },
+        { "number": "10th", "german": "zehnte" },
+        { "number": "20th", "german": "zwanzigste" },
+        { "number": "100th", "german": "hundertste" }
+      ],
+      "rule": "Ordinals decline like adjectives: der erste Tag, am dritten Mai"
+    },
+    {
+      "title": "Days of the Week",
+      "description": "All days are masculine (der)",
+      "items": [
+        { "german": "Montag", "english": "Monday", "short": "Mo" },
+        { "german": "Dienstag", "english": "Tuesday", "short": "Di" },
+        { "german": "Mittwoch", "english": "Wednesday", "short": "Mi" },
+        { "german": "Donnerstag", "english": "Thursday", "short": "Do" },
+        { "german": "Freitag", "english": "Friday", "short": "Fr" },
+        { "german": "Samstag", "english": "Saturday", "short": "Sa" },
+        { "german": "Sonntag", "english": "Sunday", "short": "So" }
+      ],
+      "usage": "am Montag = on Monday, montags = on Mondays (habitual)"
+    },
+    {
+      "title": "Months",
+      "description": "All months are masculine (der)",
+      "items": [
+        { "german": "Januar", "english": "January" },
+        { "german": "Februar", "english": "February" },
+        { "german": "März", "english": "March" },
+        { "german": "April", "english": "April" },
+        { "german": "Mai", "english": "May" },
+        { "german": "Juni", "english": "June" },
+        { "german": "Juli", "english": "July" },
+        { "german": "August", "english": "August" },
+        { "german": "September", "english": "September" },
+        { "german": "Oktober", "english": "October" },
+        { "german": "November", "english": "November" },
+        { "german": "Dezember", "english": "December" }
+      ],
+      "usage": "im Januar = in January, seit März = since March"
+    },
+    {
+      "title": "Seasons",
+      "description": "All seasons are masculine (der)",
+      "items": [
+        { "german": "der Frühling", "english": "spring" },
+        { "german": "der Sommer", "english": "summer" },
+        { "german": "der Herbst", "english": "autumn/fall" },
+        { "german": "der Winter", "english": "winter" }
+      ],
+      "usage": "im Sommer = in summer"
+    }
+  ]
+}
