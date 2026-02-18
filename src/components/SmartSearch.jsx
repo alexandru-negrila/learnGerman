@@ -26,7 +26,7 @@ export default function SmartSearch() {
   const results = useMemo(() => filterEntries(query), [query]);
 
   const handleSelect = useCallback((entry) => {
-    navigate(entry.link);
+    navigate(`${entry.link}?highlight=${entry.sectionId}`);
     close();
   }, [navigate, close]);
 

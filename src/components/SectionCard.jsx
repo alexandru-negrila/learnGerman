@@ -1,10 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-export default function SectionCard({ title, description, children, defaultOpen = true }) {
-  const [open, setOpen] = useState(defaultOpen);
+export default function SectionCard({ title, description, children, defaultOpen = true, id, highlighted = false }) {
+  const [open, setOpen] = useState(defaultOpen || highlighted);
+  const [showHighlight, setShowHighlight] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    if (highlighted) {
+      setOpen(true);
+      setShowHighlight(true);
+      const scrollTimer = setTimeout(() => {
+        cardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+      const fadeTimer = setTimeout(() => setShowHighlight(false), 2500);
+      return () => {
+        clearTimeout(scrollTimer);
+        clearTimeout(fadeTimer);
+      };
+    }
+  }, [highlighted]);
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div
+      ref={cardRef}
+      id={id}
+      className={`bg-white rounded-xl border overflow-hidden transition-all duration-700 ${
+        showHighlight
+          ? 'border-blue-400 ring-2 ring-blue-300 shadow-lg shadow-blue-100'
+          : 'border-gray-200'
+      }`}
+    >
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-4 py-3 bg-white hover:bg-gray-50 transition-colors cursor-pointer border-0 text-left"

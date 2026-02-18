@@ -1,10 +1,13 @@
 import { useLanguage } from '../hooks/useLanguage';
+import { useHighlightSection } from '../hooks/useHighlightSection';
+import { slugify } from '../utils/slugify';
 import prepositionsData from '../data/prepositions.json';
 import PageHeader from '../components/PageHeader';
 import SectionCard from '../components/SectionCard';
 
 export default function Prepositions() {
   const { t } = useLanguage();
+  const highlightId = useHighlightSection();
 
   const caseColors = {
     'Akkusativ Prepositions': 'border-l-red-400',
@@ -25,6 +28,8 @@ export default function Prepositions() {
         {prepositionsData.sections.map((section, si) => (
           <SectionCard
             key={si}
+            id={slugify(section.title)}
+            highlighted={highlightId === slugify(section.title)}
             title={section.title}
             description={section.description}
           >

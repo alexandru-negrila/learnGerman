@@ -1,10 +1,13 @@
 import { useLanguage } from '../hooks/useLanguage';
+import { useHighlightSection } from '../hooks/useHighlightSection';
+import { slugify } from '../utils/slugify';
 import sentencesData from '../data/sentences.json';
 import PageHeader from '../components/PageHeader';
 import SectionCard from '../components/SectionCard';
 
 export default function Sentences() {
   const { t } = useLanguage();
+  const highlightId = useHighlightSection();
 
   return (
     <div>
@@ -16,7 +19,7 @@ export default function Sentences() {
 
       <div className="space-y-4">
         {sentencesData.sections.map((section, si) => (
-          <SectionCard key={si} title={section.title} description={section.description}>
+          <SectionCard key={si} id={slugify(section.title)} highlighted={highlightId === slugify(section.title)} title={section.title} description={section.description}>
             {/* Sentence Patterns */}
             {section.patterns && (
               <div className="space-y-3 mb-3">
