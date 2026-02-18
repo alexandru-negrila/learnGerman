@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "German Pronouns",
+    "description": "All pronoun types with declension tables across all four cases",
+    "icon": "👤"
+  },
+  "sections": [
+    {
+      "title": "Personal Pronouns",
+      "description": "Decline through all four cases",
+      "headers": ["Nominativ", "Akkusativ", "Dativ", "Genitiv"],
+      "rows": [
+        { "label": "ich (I)", "cells": ["ich", "mich", "mir", "meiner"] },
+        { "label": "du (you sg.)", "cells": ["du", "dich", "dir", "deiner"] },
+        { "label": "er (he)", "cells": ["er", "ihn", "ihm", "seiner"] },
+        { "label": "sie (she)", "cells": ["sie", "sie", "ihr", "ihrer"] },
+        { "label": "es (it)", "cells": ["es", "es", "ihm", "seiner"] },
+        { "label": "wir (we)", "cells": ["wir", "uns", "uns", "unser"] },
+        { "label": "ihr (you pl.)", "cells": ["ihr", "euch", "euch", "euer"] },
+        { "label": "sie/Sie (they/You formal)", "cells": ["sie/Sie", "sie/Sie", "ihnen/Ihnen", "ihrer/Ihrer"] }
+      ]
+    },
+    {
+      "title": "Possessive Pronouns (Nominativ)",
+      "description": "Possessive determiners in nominative case for each gender",
+      "headers": ["Maskulin", "Feminin", "Neutrum", "Plural"],
+      "rows": [
+        { "label": "ich → my", "cells": ["mein", "meine", "mein", "meine"] },
+        { "label": "du → your", "cells": ["dein", "deine", "dein", "deine"] },
+        { "label": "er → his", "cells": ["sein", "seine", "sein", "seine"] },
+        { "label": "sie → her", "cells": ["ihr", "ihre", "ihr", "ihre"] },
+        { "label": "es → its", "cells": ["sein", "seine", "sein", "seine"] },
+        { "label": "wir → our", "cells": ["unser", "unsere", "unser", "unsere"] },
+        { "label": "ihr → your (pl.)", "cells": ["euer", "eure", "euer", "eure"] },
+        { "label": "sie/Sie → their/Your", "cells": ["ihr/Ihr", "ihre/Ihre", "ihr/Ihr", "ihre/Ihre"] }
+      ]
+    },
+    {
+      "title": "Reflexive Pronouns",
+      "description": "Used with reflexive verbs (sich freuen, sich waschen, etc.)",
+      "headers": ["Akkusativ", "Dativ"],
+      "rows": [
+        { "label": "ich", "cells": ["mich", "mir"] },
+        { "label": "du", "cells": ["dich", "dir"] },
+        { "label": "er/sie/es", "cells": ["sich", "sich"] },
+        { "label": "wir", "cells": ["uns", "uns"] },
+        { "label": "ihr", "cells": ["euch", "euch"] },
+        { "label": "sie/Sie", "cells": ["sich", "sich"] }
+      ]
+    },
+    {
+      "title": "Relative Pronouns",
+      "description": "Used to introduce relative clauses (der Mann, der ...)",
+      "headers": ["Maskulin", "Feminin", "Neutrum", "Plural"],
+      "rows": [
+        { "label": "Nominativ", "cells": ["der", "die", "das", "die"] },
+        { "label": "Akkusativ", "cells": ["den", "die", "das", "die"] },
+        { "label": "Dativ", "cells": ["dem", "der", "dem", "denen"] },
+        { "label": "Genitiv", "cells": ["dessen", "deren", "dessen", "deren"] }
+      ]
+    },
+    {
+      "title": "Interrogative Pronouns",
+      "description": "Question words that decline through cases",
+      "headers": ["Nominativ", "Akkusativ", "Dativ", "Genitiv"],
+      "rows": [
+        { "label": "wer (who - person)", "cells": ["wer", "wen", "wem", "wessen"] },
+        { "label": "was (what - thing)", "cells": ["was", "was", "—", "wessen"] }
+      ]
+    },
+    {
+      "title": "Demonstrative Pronouns",
+      "description": "dieser (this), jener (that), jeder (each/every)",
+      "headers": ["Maskulin", "Feminin", "Neutrum", "Plural"],
+      "rows": [
+        { "label": "Nom. dieser", "cells": ["dieser", "diese", "dieses", "diese"] },
+        { "label": "Akk. dieser", "cells": ["diesen", "diese", "dieses", "diese"] },
+        { "label": "Dat. dieser", "cells": ["diesem", "dieser", "diesem", "diesen"] },
+        { "label": "Gen. dieser", "cells": ["dieses", "dieser", "dieses", "dieser"] },
+        { "label": "Nom. jeder", "cells": ["jeder", "jede", "jedes", "alle"] },
+        { "label": "Akk. jeder", "cells": ["jeden", "jede", "jedes", "alle"] },
+        { "label": "Dat. jeder", "cells": ["jedem", "jeder", "jedem", "allen"] }
+      ]
+    }
+  ]
+}

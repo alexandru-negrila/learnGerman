@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "Sentence Structure",
+    "description": "German word order rules and sentence patterns",
+    "icon": "🔤"
+  },
+  "sections": [
+    {
+      "title": "Main Clause (Hauptsatz)",
+      "description": "The verb is ALWAYS in position 2",
+      "patterns": [
+        {
+          "name": "Standard (SVO)",
+          "structure": ["Subject", "VERB", "Object / Rest"],
+          "example": "Ich | lerne | Deutsch.",
+          "exampleEn": "I learn German."
+        },
+        {
+          "name": "Time-first (TeSuVeRe)",
+          "structure": ["Time", "VERB", "Subject", "Object / Rest"],
+          "example": "Heute | lerne | ich | Deutsch.",
+          "exampleEn": "Today I learn German."
+        },
+        {
+          "name": "Object-first (Emphasis)",
+          "structure": ["Object", "VERB", "Subject", "Rest"],
+          "example": "Deutsch | lerne | ich | gern.",
+          "exampleEn": "German I like learning."
+        }
+      ],
+      "rules": [
+        "The conjugated verb is ALWAYS in position 2 in a main clause",
+        "Only ONE element can come before the verb",
+        "If that element is not the subject, the subject goes right after the verb (inversion)",
+        "Time-Manner-Place order for adverbs after the verb"
+      ]
+    },
+    {
+      "title": "Subordinate Clause (Nebensatz)",
+      "description": "The verb goes to the END",
+      "patterns": [
+        {
+          "name": "Because (weil)",
+          "structure": ["Hauptsatz", ", weil", "Subject", "...", "VERB."],
+          "example": "Ich bleibe zu Hause, weil ich krank bin.",
+          "exampleEn": "I stay home because I am sick."
+        },
+        {
+          "name": "That (dass)",
+          "structure": ["Hauptsatz", ", dass", "Subject", "...", "VERB."],
+          "example": "Ich glaube, dass er nett ist.",
+          "exampleEn": "I believe that he is nice."
+        },
+        {
+          "name": "When (wenn / als)",
+          "structure": ["Wenn/Als", "Subject", "...", "VERB,", "VERB", "Subject", "..."],
+          "example": "Wenn es regnet, bleibe ich zu Hause.",
+          "exampleEn": "When it rains, I stay home."
+        }
+      ],
+      "conjunctions": [
+        { "german": "weil", "english": "because", "verbPosition": "end" },
+        { "german": "dass", "english": "that", "verbPosition": "end" },
+        { "german": "wenn", "english": "when / if (present/future)", "verbPosition": "end" },
+        { "german": "als", "english": "when (past, one-time)", "verbPosition": "end" },
+        { "german": "obwohl", "english": "although", "verbPosition": "end" },
+        { "german": "ob", "english": "whether / if", "verbPosition": "end" },
+        { "german": "bevor", "english": "before", "verbPosition": "end" },
+        { "german": "nachdem", "english": "after", "verbPosition": "end" },
+        { "german": "während", "english": "while", "verbPosition": "end" },
+        { "german": "damit", "english": "so that", "verbPosition": "end" }
+      ]
+    },
+    {
+      "title": "Questions",
+      "description": "Two types of questions in German",
+      "patterns": [
+        {
+          "name": "Yes/No Questions",
+          "structure": ["VERB", "Subject", "Rest", "?"],
+          "example": "Lernst du Deutsch?",
+          "exampleEn": "Do you learn German?"
+        },
+        {
+          "name": "W-Questions",
+          "structure": ["W-Word", "VERB", "Subject", "Rest", "?"],
+          "example": "Was lernst du?",
+          "exampleEn": "What do you learn?"
+        }
+      ],
+      "questionWords": [
+        { "german": "wer", "english": "who" },
+        { "german": "was", "english": "what" },
+        { "german": "wo", "english": "where" },
+        { "german": "wohin", "english": "where to" },
+        { "german": "woher", "english": "where from" },
+        { "german": "wann", "english": "when" },
+        { "german": "warum", "english": "why" },
+        { "german": "wie", "english": "how" },
+        { "german": "wie viel(e)", "english": "how much/many" },
+        { "german": "welch-", "english": "which" }
+      ]
+    },
+    {
+      "title": "Negation",
+      "description": "nicht vs. kein",
+      "rules": [
+        {
+          "word": "kein",
+          "usage": "Negates nouns with ein/eine or no article",
+          "example": "Ich habe kein Auto.",
+          "exampleEn": "I don't have a car."
+        },
+        {
+          "word": "nicht",
+          "usage": "Negates verbs, adjectives, adverbs, and nouns with definite articles",
+          "example": "Ich komme nicht aus Berlin.",
+          "exampleEn": "I don't come from Berlin."
+        }
+      ],
+      "nichtPosition": [
+        "Before adjectives: Das ist nicht gut.",
+        "Before prepositional phrases: Ich gehe nicht in die Schule.",
+        "At the end for general negation: Ich schlafe nicht.",
+        "Before the second verb part: Ich kann nicht schwimmen."
+      ]
+    },
+    {
+      "title": "Connectors (Position 0)",
+      "description": "These coordinating conjunctions don't affect word order",
+      "connectors": [
+        { "german": "und", "english": "and" },
+        { "german": "oder", "english": "or" },
+        { "german": "aber", "english": "but" },
+        { "german": "denn", "english": "because (coordinating)" },
+        { "german": "sondern", "english": "but rather (after negation)" }
+      ]
+    }
+  ]
+}

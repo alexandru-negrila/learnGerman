@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "German Prepositions",
+    "description": "Prepositions organized by the case they govern",
+    "icon": "📍"
+  },
+  "sections": [
+    {
+      "title": "Akkusativ Prepositions",
+      "description": "Always followed by the accusative case",
+      "mnemonic": "DOGFU: durch, ohne, gegen, für, um",
+      "items": [
+        { "german": "durch", "english": "through", "example": "Wir gehen durch den Park.", "exampleEn": "We walk through the park." },
+        { "german": "für", "english": "for", "example": "Das Geschenk ist für dich.", "exampleEn": "The gift is for you." },
+        { "german": "gegen", "english": "against", "example": "Er ist gegen die Idee.", "exampleEn": "He is against the idea." },
+        { "german": "ohne", "english": "without", "example": "Ich gehe ohne meinen Bruder.", "exampleEn": "I go without my brother." },
+        { "german": "um", "english": "around / at (time)", "example": "Wir treffen uns um acht Uhr.", "exampleEn": "We meet at eight o'clock." },
+        { "german": "bis", "english": "until / to", "example": "Bis morgen!", "exampleEn": "Until tomorrow!" },
+        { "german": "entlang", "english": "along (after noun)", "example": "Gehen Sie die Straße entlang.", "exampleEn": "Walk along the street." }
+      ]
+    },
+    {
+      "title": "Dativ Prepositions",
+      "description": "Always followed by the dative case",
+      "mnemonic": "ABS MOVE NZ: aus, bei, seit, mit, nach, von, zu + gegenüber",
+      "items": [
+        { "german": "aus", "english": "from / out of", "example": "Ich komme aus Deutschland.", "exampleEn": "I come from Germany." },
+        { "german": "bei", "english": "at / near / with", "example": "Ich wohne bei meiner Mutter.", "exampleEn": "I live with my mother." },
+        { "german": "mit", "english": "with", "example": "Ich fahre mit dem Bus.", "exampleEn": "I travel by bus." },
+        { "german": "nach", "english": "after / to (places)", "example": "Wir fahren nach Berlin.", "exampleEn": "We drive to Berlin." },
+        { "german": "seit", "english": "since / for (time)", "example": "Ich lerne seit zwei Jahren Deutsch.", "exampleEn": "I have been learning German for two years." },
+        { "german": "von", "english": "from / of", "example": "Das Buch ist von meinem Freund.", "exampleEn": "The book is from my friend." },
+        { "german": "zu", "english": "to", "example": "Ich gehe zum Arzt.", "exampleEn": "I go to the doctor." },
+        { "german": "gegenüber", "english": "opposite / across from", "example": "Die Bank ist gegenüber dem Hotel.", "exampleEn": "The bank is opposite the hotel." },
+        { "german": "außer", "english": "except / besides", "example": "Alle außer mir waren da.", "exampleEn": "Everyone except me was there." }
+      ]
+    },
+    {
+      "title": "Wechselpräpositionen (Two-Way Prepositions)",
+      "description": "Akkusativ with movement (wohin?), Dativ with location (wo?)",
+      "mnemonic": "AN, AUF, HINTER, IN, NEBEN, ÜBER, UNTER, VOR, ZWISCHEN",
+      "items": [
+        { "german": "an", "english": "at / on (vertical)", "example": "Das Bild hängt an der Wand. / Ich hänge das Bild an die Wand.", "exampleEn": "The picture hangs on the wall. / I hang the picture on the wall." },
+        { "german": "auf", "english": "on (horizontal)", "example": "Das Buch liegt auf dem Tisch. / Ich lege das Buch auf den Tisch.", "exampleEn": "The book is on the table. / I put the book on the table." },
+        { "german": "hinter", "english": "behind", "example": "Die Katze ist hinter dem Sofa. / Die Katze läuft hinter das Sofa.", "exampleEn": "The cat is behind the sofa. / The cat runs behind the sofa." },
+        { "german": "in", "english": "in / into", "example": "Ich bin in der Schule. / Ich gehe in die Schule.", "exampleEn": "I am in school. / I go to school." },
+        { "german": "neben", "english": "next to", "example": "Der Stuhl steht neben dem Tisch.", "exampleEn": "The chair stands next to the table." },
+        { "german": "über", "english": "over / above", "example": "Die Lampe hängt über dem Tisch.", "exampleEn": "The lamp hangs above the table." },
+        { "german": "unter", "english": "under", "example": "Die Katze schläft unter dem Bett.", "exampleEn": "The cat sleeps under the bed." },
+        { "german": "vor", "english": "in front of / before", "example": "Das Auto steht vor dem Haus.", "exampleEn": "The car is in front of the house." },
+        { "german": "zwischen", "english": "between", "example": "Der Park ist zwischen dem Kino und der Schule.", "exampleEn": "The park is between the cinema and the school." }
+      ]
+    },
+    {
+      "title": "Genitiv Prepositions",
+      "description": "Followed by the genitive case (more formal/written)",
+      "items": [
+        { "german": "wegen", "english": "because of", "example": "Wegen des Regens bleiben wir zu Hause.", "exampleEn": "Because of the rain, we stay home." },
+        { "german": "während", "english": "during", "example": "Während des Unterrichts muss man leise sein.", "exampleEn": "During class, one must be quiet." },
+        { "german": "trotz", "english": "despite", "example": "Trotz des schlechten Wetters gehen wir spazieren.", "exampleEn": "Despite the bad weather, we go for a walk." },
+        { "german": "statt / anstatt", "english": "instead of", "example": "Statt des Autos nehme ich das Fahrrad.", "exampleEn": "Instead of the car, I take the bicycle." },
+        { "german": "innerhalb", "english": "within / inside of", "example": "Innerhalb eines Jahres hat er Deutsch gelernt.", "exampleEn": "Within a year, he learned German." },
+        { "german": "außerhalb", "english": "outside of", "example": "Außerhalb der Stadt gibt es viel Natur.", "exampleEn": "Outside the city, there is a lot of nature." }
+      ]
+    }
+  ]
+}

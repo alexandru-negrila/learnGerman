@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Common Phrases",
+    "description": "Essential German phrases for everyday situations",
+    "icon": "💬"
+  },
+  "sections": [
+    {
+      "title": "Greetings & Goodbyes",
+      "items": [
+        { "german": "Hallo!", "english": "Hello!", "formal": false },
+        { "german": "Guten Morgen!", "english": "Good morning!", "formal": true },
+        { "german": "Guten Tag!", "english": "Good day!", "formal": true },
+        { "german": "Guten Abend!", "english": "Good evening!", "formal": true },
+        { "german": "Tschüss!", "english": "Bye!", "formal": false },
+        { "german": "Auf Wiedersehen!", "english": "Goodbye!", "formal": true },
+        { "german": "Bis bald!", "english": "See you soon!", "formal": false },
+        { "german": "Bis morgen!", "english": "See you tomorrow!", "formal": false },
+        { "german": "Gute Nacht!", "english": "Good night!", "formal": true }
+      ]
+    },
+    {
+      "title": "Introductions",
+      "items": [
+        { "german": "Wie heißen Sie? / Wie heißt du?", "english": "What is your name?", "formal": true },
+        { "german": "Ich heiße ...", "english": "My name is ...", "formal": false },
+        { "german": "Woher kommen Sie? / Woher kommst du?", "english": "Where are you from?", "formal": true },
+        { "german": "Ich komme aus ...", "english": "I come from ...", "formal": false },
+        { "german": "Freut mich!", "english": "Nice to meet you!", "formal": false },
+        { "german": "Wie geht es Ihnen? / Wie geht's?", "english": "How are you?", "formal": true },
+        { "german": "Mir geht es gut, danke.", "english": "I'm fine, thank you.", "formal": false },
+        { "german": "Was machen Sie beruflich?", "english": "What do you do for a living?", "formal": true },
+        { "german": "Ich bin ... (Lehrer/Student/Arzt)", "english": "I am a ... (teacher/student/doctor)", "formal": false }
+      ]
+    },
+    {
+      "title": "Polite Expressions",
+      "items": [
+        { "german": "Bitte!", "english": "Please! / You're welcome!", "formal": true },
+        { "german": "Danke! / Danke schön!", "english": "Thank you! / Thank you very much!", "formal": true },
+        { "german": "Vielen Dank!", "english": "Many thanks!", "formal": true },
+        { "german": "Entschuldigung!", "english": "Excuse me! / Sorry!", "formal": true },
+        { "german": "Es tut mir leid.", "english": "I'm sorry.", "formal": true },
+        { "german": "Kein Problem!", "english": "No problem!", "formal": false },
+        { "german": "Gern geschehen!", "english": "You're welcome!", "formal": true }
+      ]
+    },
+    {
+      "title": "Everyday Communication",
+      "items": [
+        { "german": "Ich verstehe (nicht).", "english": "I (don't) understand.", "formal": false },
+        { "german": "Können Sie das wiederholen?", "english": "Can you repeat that?", "formal": true },
+        { "german": "Sprechen Sie Englisch?", "english": "Do you speak English?", "formal": true },
+        { "german": "Ich spreche ein bisschen Deutsch.", "english": "I speak a little German.", "formal": false },
+        { "german": "Wie sagt man ... auf Deutsch?", "english": "How do you say ... in German?", "formal": false },
+        { "german": "Was bedeutet ...?", "english": "What does ... mean?", "formal": false },
+        { "german": "Langsamer, bitte.", "english": "Slower, please.", "formal": true },
+        { "german": "Können Sie mir helfen?", "english": "Can you help me?", "formal": true }
+      ]
+    },
+    {
+      "title": "Shopping & Restaurants",
+      "items": [
+        { "german": "Was kostet das? / Wie viel kostet das?", "english": "How much does this cost?", "formal": true },
+        { "german": "Ich hätte gern ...", "english": "I would like ...", "formal": true },
+        { "german": "Die Rechnung, bitte.", "english": "The bill, please.", "formal": true },
+        { "german": "Haben Sie ...?", "english": "Do you have ...?", "formal": true },
+        { "german": "Wo ist die Toilette?", "english": "Where is the restroom?", "formal": true },
+        { "german": "Kann ich mit Karte zahlen?", "english": "Can I pay by card?", "formal": true },
+        { "german": "Das schmeckt gut!", "english": "That tastes good!", "formal": false },
+        { "german": "Prost!", "english": "Cheers!", "formal": false }
+      ]
+    },
+    {
+      "title": "Directions & Travel",
+      "items": [
+        { "german": "Wo ist ...?", "english": "Where is ...?", "formal": true },
+        { "german": "Wie komme ich zum/zur ...?", "english": "How do I get to ...?", "formal": true },
+        { "german": "links / rechts / geradeaus", "english": "left / right / straight ahead", "formal": false },
+        { "german": "die erste/zweite/dritte Straße", "english": "the first/second/third street", "formal": false },
+        { "german": "Wann fährt der nächste Zug?", "english": "When does the next train leave?", "formal": true },
+        { "german": "Eine Fahrkarte nach ..., bitte.", "english": "A ticket to ..., please.", "formal": true },
+        { "german": "Ist es weit von hier?", "english": "Is it far from here?", "formal": true }
+      ]
+    },
+    {
+      "title": "Time Expressions",
+      "items": [
+        { "german": "heute / gestern / morgen", "english": "today / yesterday / tomorrow", "formal": false },
+        { "german": "jetzt / später / bald", "english": "now / later / soon", "formal": false },
+        { "german": "immer / manchmal / nie", "english": "always / sometimes / never", "formal": false },
+        { "german": "Wie spät ist es?", "english": "What time is it?", "formal": true },
+        { "german": "Es ist ... Uhr.", "english": "It is ... o'clock.", "formal": false },
+        { "german": "um halb drei", "english": "at half past two (2:30)", "formal": false },
+        { "german": "Viertel vor/nach ...", "english": "Quarter to/past ...", "formal": false }
+      ]
+    }
+  ]
+}
