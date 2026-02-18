@@ -149,11 +149,39 @@ export const searchEntries = [
   ...articleEntries,
 ];
 
+// Normalize umlauts so "koenen"/"konen" matches "können", etc.
+function normalize(str) {
+  return str
+    .toLowerCase()
+    .replace(/ä/g, 'a')
+    .replace(/ö/g, 'o')
+    .replace(/ü/g, 'u')
+    .replace(/ß/g, 'ss');
+}
+
+function normalizeQuery(str) {
+  return str
+    .toLowerCase()
+    .replace(/ae/g, 'a')
+    .replace(/oe/g, 'o')
+    .replace(/ue/g, 'u')
+    .replace(/ss/g, 'ss')
+    .replace(/ä/g, 'a')
+    .replace(/ö/g, 'o')
+    .replace(/ü/g, 'u')
+    .replace(/ß/g, 'ss');
+}
+
 export function filterEntries(query) {
   if (!query || query.trim().length === 0) return [];
   const q = query.toLowerCase().trim();
-  return searchEntries.filter(entry =>
-    entry.german.toLowerCase().includes(q) ||
-    entry.english.toLowerCase().includes(q)
-  );
+  const qNorm = normalizeQuery(q);
+  return searchEntries.filter(entry => {
+    const german = entry.german.toLowerCase();
+    const english = entry.english.toLowerCase();
+    // Exact substring match first
+    if (german.includes(q) || english.includes(q)) return true;
+    // Normalized match (umlauts: ö=oe=o, ü=ue=u, ä=ae=a, ß=ss)
+    return normalize(german).includes(qNorm) || normalize(english).includes(qNorm);
+  });
 }
