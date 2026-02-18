@@ -2,6 +2,7 @@ import verbsData from './verbs.json';
 import prepData from './prepositions.json';
 import sentencesData from './sentences.json';
 import articlesData from './articles.json';
+import pronounsData from './pronouns.json';
 import { slugify } from '../utils/slugify';
 
 const verbEntries = verbsData.sections.flatMap(section =>
@@ -149,6 +150,67 @@ articlesData.sections[2].rows.forEach(row => {
   }
 });
 
+// Personal pronouns — all case forms searchable (e.g. searching "ihn" matches "er")
+const personalPronounEntries = pronounsData.sections[0].rows.map(row => {
+  const english = row.label.match(/\((.+)\)/)?.[1] || row.label;
+  const uniqueForms = [...new Set(row.cells)];
+  const nominative = row.cells[0].toLowerCase().replace(/\//g, '-');
+  return {
+    id: `pron-pers-${nominative}`,
+    german: uniqueForms.join(' / '),
+    english,
+    category: 'pronoun',
+    categoryLabel: 'Personal Pronoun',
+    example: null,
+    exampleEn: null,
+    link: '/pronouns',
+    sectionId: slugify(pronounsData.sections[0].title),
+    isVerb: false,
+  };
+});
+
+// Reflexive pronouns
+const reflexivePronounEntries = pronounsData.sections[2].rows.map(row => {
+  const uniqueForms = [...new Set(row.cells)];
+  return {
+    id: `pron-refl-${row.label.toLowerCase().replace(/[^a-z]+/g, '-')}`,
+    german: uniqueForms.join(' / '),
+    english: `${row.label} — reflexive`,
+    category: 'pronoun',
+    categoryLabel: 'Reflexive Pronoun',
+    example: null,
+    exampleEn: null,
+    link: '/pronouns',
+    sectionId: slugify(pronounsData.sections[2].title),
+    isVerb: false,
+  };
+});
+
+// Interrogative pronouns — wer/wen/wem/wessen, was
+const interrogativePronounEntries = pronounsData.sections[4].rows.map(row => {
+  const english = row.label.match(/\((.+)\)/)?.[1] || row.label;
+  const uniqueForms = [...new Set(row.cells.filter(c => c !== '—'))];
+  const base = row.cells[0].toLowerCase();
+  return {
+    id: `pron-inter-${base}`,
+    german: uniqueForms.join(' / '),
+    english,
+    category: 'pronoun',
+    categoryLabel: 'Interrogative Pronoun',
+    example: null,
+    exampleEn: null,
+    link: '/pronouns',
+    sectionId: slugify(pronounsData.sections[4].title),
+    isVerb: false,
+  };
+});
+
+const pronounEntries = [
+  ...personalPronounEntries,
+  ...reflexivePronounEntries,
+  ...interrogativePronounEntries,
+];
+
 export const searchEntries = [
   ...verbEntries,
   ...prepEntries,
@@ -157,6 +219,7 @@ export const searchEntries = [
   ...connectorEntries,
   ...negationEntries,
   ...articleEntries,
+  ...pronounEntries,
 ];
 
 // Normalize umlauts so "koenen"/"konen" matches "können", etc.
