@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../hooks/useLanguage';
+import SmartSearch from './SmartSearch';
 
 const navItems = [
   { path: '/', key: 'home', icon: '🏠' },
@@ -49,8 +50,9 @@ export default function Layout({ children }) {
               ))}
             </nav>
 
-            {/* Language Toggle + Mobile Menu */}
+            {/* Search + Language Toggle + Mobile Menu */}
             <div className="flex items-center gap-2">
+              <SmartSearch />
               <button
                 onClick={toggleLang}
                 className="px-2.5 py-1 rounded-lg border border-gray-200 text-sm font-medium hover:bg-gray-50 transition-colors cursor-pointer bg-white"
