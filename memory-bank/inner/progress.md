@@ -51,14 +51,32 @@
 - [x] README with full documentation
 - [x] KRIS memory-bank documentation
 - [ ] Dark mode (backlog)
-- [ ] Global search (backlog)
+- [x] Global search (done in V1 — SmartSearch component)
 - [ ] Vercel deployment (user to complete)
+
+### M6: UI/UX Redesign — "Calm Focus" - DONE (V1.1)
+- [x] Design system in index.css (@theme, animations, utilities)
+- [x] Inter font via Google Fonts CDN
+- [x] Glassmorphism header with backdrop-blur
+- [x] Warm indigo brand palette (brand-50 to brand-700)
+- [x] Warm surface tones (surface-50 to surface-300, based on stone)
+- [x] SectionCard with rounded-2xl, smooth collapse, circular chevron icon
+- [x] DataTable with uppercase tracking-wide headers, softer zebra rows
+- [x] PageHeader with gradient accent line
+- [x] Home page with gradient text hero, stagger-animated topic grid, hover-lift cards
+- [x] Practice page with lettered option bubbles (A/B/C/D), animated progress bar, score completion screen
+- [x] SmartSearch with search icon, rounded-2xl dropdown, category badges
+- [x] Consistent category color system across all pages
+- [x] Micro-interactions: active:scale, hover-lift, animate-fade-in, animate-scale-in
+- [x] Custom scrollbar styling, selection color, focus-visible rings
+- [x] Production build passes with 0 warnings
 
 ## File Inventory
 | Directory | Files | Purpose |
 |-----------|-------|---------|
-| `src/data/` | 8 JSON files | All German content + translations |
+| `src/data/` | 8 JSON + 1 JS | All German content + translations + search index |
 | `src/pages/` | 9 JSX files | Route-level pages |
-| `src/components/` | 4 JSX files | Reusable UI components |
-| `src/hooks/` | 1 JSX file | Language context hook |
+| `src/components/` | 5 JSX files | Reusable UI components (Layout, PageHeader, DataTable, SectionCard, SmartSearch) |
+| `src/hooks/` | 4 files | useLanguage, useHighlightSection, useDebounce, useClickOutside |
+| `src/utils/` | 1 JS file | slugify |
 | `memory-bank/` | 5 MD files | KRIS documentation |

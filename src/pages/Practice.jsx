@@ -124,6 +124,22 @@ function generateQuestions() {
   return shuffleArray(questions);
 }
 
+const categoryColors = {
+  'all': 'bg-stone-100 text-stone-600 border-stone-200',
+  'Verbs': 'bg-indigo-50 text-indigo-600 border-indigo-200',
+  'Pronouns': 'bg-purple-50 text-purple-600 border-purple-200',
+  'Prepositions': 'bg-emerald-50 text-emerald-600 border-emerald-200',
+  'Articles': 'bg-amber-50 text-amber-600 border-amber-200',
+};
+
+const categoryActiveColors = {
+  'all': 'bg-stone-800 text-white border-stone-800',
+  'Verbs': 'bg-indigo-600 text-white border-indigo-600',
+  'Pronouns': 'bg-purple-600 text-white border-purple-600',
+  'Prepositions': 'bg-emerald-600 text-white border-emerald-600',
+  'Articles': 'bg-amber-600 text-white border-amber-600',
+};
+
 export default function Practice() {
   const { t } = useLanguage();
   const [questions, setQuestions] = useState(null);
@@ -168,17 +184,17 @@ export default function Practice() {
       <div>
         <PageHeader icon="🎯" title={t('quizTitle')} description={t('quizDescription')} />
         <div className="max-w-md mx-auto">
-          <div className="bg-white rounded-xl border border-gray-200 p-5">
-            <p className="text-sm text-gray-600 mb-4">{t('selectTopic')}</p>
-            <div className="flex flex-wrap gap-2 mb-5">
+          <div className="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm shadow-stone-900/[0.03]">
+            <p className="text-sm text-stone-500 mb-4">{t('selectTopic')}</p>
+            <div className="flex flex-wrap gap-2 mb-6">
               {categories.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 py-1.5 rounded-lg text-sm border cursor-pointer transition-colors ${
+                  className={`px-4 py-2 rounded-xl text-sm border cursor-pointer transition-all font-medium active:scale-95 ${
                     selectedCategory === cat
-                      ? 'bg-blue-600 text-white border-blue-600'
-                      : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
+                      ? categoryActiveColors[cat]
+                      : `${categoryColors[cat]} hover:opacity-80`
                   }`}
                 >
                   {cat === 'all' ? t('allTopics') : cat}
@@ -187,7 +203,7 @@ export default function Practice() {
             </div>
             <button
               onClick={startQuiz}
-              className="w-full py-2.5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors cursor-pointer border-0 text-sm"
+              className="w-full py-3 bg-brand-600 text-white rounded-xl font-semibold hover:bg-brand-700 active:scale-[0.98] transition-all cursor-pointer border-0 text-sm shadow-lg shadow-brand-600/20"
             >
               {t('startQuiz')} ({QUIZ_LENGTH} questions)
             </button>
@@ -199,21 +215,32 @@ export default function Practice() {
 
   // Quiz complete
   if (currentIdx >= questions.length) {
+    const percentage = Math.round((score / questions.length) * 100);
+    const isGreat = score >= questions.length * 0.7;
     return (
       <div>
         <PageHeader icon="🎯" title={t('quizTitle')} />
         <div className="max-w-md mx-auto text-center">
-          <div className="bg-white rounded-xl border border-gray-200 p-6">
-            <p className="text-4xl mb-3">{score >= questions.length * 0.7 ? '🎉' : '💪'}</p>
-            <p className="text-2xl font-bold text-gray-900 mb-1">
-              {t('score')}: {score} / {questions.length}
+          <div className="bg-white rounded-2xl border border-stone-200 p-8 shadow-sm shadow-stone-900/[0.03] animate-scale-in">
+            <div className="text-5xl mb-4">{isGreat ? '🎉' : '💪'}</div>
+            <p className="text-3xl font-bold text-stone-900 mb-1 tracking-tight">
+              {score} / {questions.length}
             </p>
-            <p className="text-gray-500 mb-5">
-              {Math.round((score / questions.length) * 100)}%
+            <div className="w-full bg-stone-100 rounded-full h-3 my-4 overflow-hidden">
+              <div
+                className={`h-3 rounded-full transition-all duration-1000 ${isGreat ? 'bg-emerald-500' : 'bg-amber-500'}`}
+                style={{ width: `${percentage}%` }}
+              />
+            </div>
+            <p className={`text-lg font-semibold mb-1 ${isGreat ? 'text-emerald-600' : 'text-amber-600'}`}>
+              {percentage}%
+            </p>
+            <p className="text-sm text-stone-400 mb-6">
+              {isGreat ? 'Great job! Keep it up!' : 'Good effort! Practice makes perfect.'}
             </p>
             <button
               onClick={() => setQuestions(null)}
-              className="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors cursor-pointer border-0 text-sm"
+              className="px-6 py-2.5 bg-brand-600 text-white rounded-xl font-semibold hover:bg-brand-700 active:scale-95 transition-all cursor-pointer border-0 text-sm shadow-lg shadow-brand-600/20"
             >
               {t('tryAgain')}
             </button>
@@ -224,6 +251,7 @@ export default function Practice() {
   }
 
   const q = questions[currentIdx];
+  const progressPercent = (currentIdx / questions.length) * 100;
 
   return (
     <div>
@@ -231,52 +259,70 @@ export default function Practice() {
 
       <div className="max-w-lg mx-auto">
         {/* Progress */}
-        <div className="flex items-center justify-between mb-4 text-sm text-gray-500">
-          <span>{currentIdx + 1} {t('questionOf')} {questions.length}</span>
-          <span>{t('score')}: {score}</span>
+        <div className="flex items-center justify-between mb-3 text-sm">
+          <span className="text-stone-500 font-medium">{currentIdx + 1} {t('questionOf')} {questions.length}</span>
+          <span className="text-stone-400">{t('score')}: <span className="font-semibold text-stone-700">{score}</span></span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-1.5 mb-5">
+        <div className="w-full bg-stone-100 rounded-full h-2 mb-6 overflow-hidden">
           <div
-            className="bg-blue-600 h-1.5 rounded-full transition-all"
-            style={{ width: `${((currentIdx) / questions.length) * 100}%` }}
+            className="bg-brand-500 h-2 rounded-full progress-bar"
+            style={{ width: `${progressPercent}%` }}
           />
         </div>
 
         {/* Question Card */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
-          <span className="text-xs text-gray-400 uppercase tracking-wide">{q.category}</span>
-          <p className="text-lg font-medium text-gray-900 mt-1 mb-4">{q.question}</p>
+        <div className="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm shadow-stone-900/[0.03] animate-fade-in">
+          <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${categoryColors[q.category] || 'bg-stone-100 text-stone-500'}`}>
+            {q.category}
+          </span>
+          <p className="text-lg font-semibold text-stone-900 mt-3 mb-5 tracking-tight">{q.question}</p>
 
           {/* Multiple choice options */}
-          <div className="space-y-2">
-            {q.options.map((option, oi) => (
-              <button
-                key={oi}
-                onClick={() => !showResult && handleChoice(option)}
-                disabled={showResult !== null}
-                className={`w-full text-left px-4 py-2.5 rounded-lg border text-sm cursor-pointer transition-colors ${
-                  showResult && option === q.answer
-                    ? 'bg-green-50 border-green-300 text-green-800 font-medium'
-                    : showResult && option === userAnswer && option !== q.answer
-                    ? 'bg-red-50 border-red-300 text-red-800'
-                    : showResult
-                    ? 'bg-white border-gray-200 text-gray-400'
-                    : 'bg-white border-gray-200 hover:bg-blue-50 hover:border-blue-200 text-gray-700'
-                } disabled:cursor-default`}
-              >
-                {option}
-              </button>
-            ))}
+          <div className="space-y-2.5">
+            {q.options.map((option, oi) => {
+              let optionStyle = 'bg-white border-stone-200 hover:bg-brand-50/50 hover:border-brand-200 text-stone-700';
+              if (showResult) {
+                if (option === q.answer) {
+                  optionStyle = 'bg-emerald-50 border-emerald-300 text-emerald-800 font-semibold';
+                } else if (option === userAnswer && option !== q.answer) {
+                  optionStyle = 'bg-red-50 border-red-300 text-red-800';
+                } else {
+                  optionStyle = 'bg-white border-stone-200 text-stone-300';
+                }
+              }
+
+              return (
+                <button
+                  key={oi}
+                  onClick={() => !showResult && handleChoice(option)}
+                  disabled={showResult !== null}
+                  className={`w-full text-left px-4 py-3 rounded-xl border text-sm cursor-pointer transition-all active:scale-[0.98] ${optionStyle} disabled:cursor-default`}
+                >
+                  <span className="flex items-center gap-3">
+                    <span className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 text-xs font-bold ${
+                      showResult && option === q.answer ? 'border-emerald-400 bg-emerald-100 text-emerald-700' :
+                      showResult && option === userAnswer ? 'border-red-400 bg-red-100 text-red-700' :
+                      'border-stone-200 text-stone-400'
+                    }`}>
+                      {showResult && option === q.answer ? '✓' :
+                       showResult && option === userAnswer && option !== q.answer ? '✗' :
+                       String.fromCharCode(65 + oi)}
+                    </span>
+                    {option}
+                  </span>
+                </button>
+              );
+            })}
           </div>
 
           {/* Result */}
           {showResult && (
-            <div className={`mt-3 px-3 py-2 rounded-lg text-sm ${
+            <div className={`mt-4 px-4 py-3 rounded-xl text-sm animate-fade-in ${
               showResult === 'correct'
-                ? 'bg-green-50 border border-green-200 text-green-800'
+                ? 'bg-emerald-50 border border-emerald-200 text-emerald-800'
                 : 'bg-red-50 border border-red-200 text-red-800'
             }`}>
-              <p className="font-medium">
+              <p className="font-semibold">
                 {showResult === 'correct' ? t('correct') : t('incorrect')}
               </p>
               {showResult === 'incorrect' && (
@@ -289,7 +335,7 @@ export default function Practice() {
           {showResult && (
             <button
               onClick={nextQuestion}
-              className="mt-3 w-full py-2 bg-gray-800 text-white rounded-lg font-medium hover:bg-gray-900 transition-colors cursor-pointer border-0 text-sm"
+              className="mt-4 w-full py-3 bg-stone-900 text-white rounded-xl font-semibold hover:bg-stone-800 active:scale-[0.98] transition-all cursor-pointer border-0 text-sm"
             >
               {t('nextQuestion')} →
             </button>
@@ -297,7 +343,9 @@ export default function Practice() {
 
           {/* Hint */}
           {q.hint && !showResult && (
-            <p className="mt-3 text-xs text-gray-400">💡 Hint: {q.hint}</p>
+            <p className="mt-4 text-xs text-stone-400 flex items-center gap-1.5">
+              <span>💡</span> Hint: {q.hint}
+            </p>
           )}
         </div>
       </div>

@@ -24,29 +24,31 @@ export default function SectionCard({ title, description, children, defaultOpen 
     <div
       ref={cardRef}
       id={id}
-      className={`bg-white rounded-xl border overflow-hidden transition-all duration-700 ${
+      className={`bg-white rounded-2xl border overflow-hidden transition-all duration-500 shadow-sm shadow-stone-900/[0.03] ${
         showHighlight
-          ? 'border-blue-400 ring-2 ring-blue-300 shadow-lg shadow-blue-100'
-          : 'border-gray-200'
+          ? 'border-brand-400 ring-2 ring-brand-200 shadow-lg shadow-brand-100'
+          : 'border-stone-200 hover:border-stone-300'
       }`}
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-4 py-3 bg-white hover:bg-gray-50 transition-colors cursor-pointer border-0 text-left"
+        className="w-full flex items-center justify-between px-5 py-4 bg-white hover:bg-stone-50/50 transition-colors cursor-pointer border-0 text-left group"
       >
-        <div>
-          <h3 className="font-semibold text-gray-900 text-base">{title}</h3>
-          {description && <p className="text-sm text-gray-500 mt-0.5">{description}</p>}
+        <div className="flex-1 min-w-0">
+          <h3 className="font-semibold text-stone-900 text-base tracking-tight">{title}</h3>
+          {description && <p className="text-sm text-stone-400 mt-0.5 truncate">{description}</p>}
         </div>
-        <svg
-          className={`w-5 h-5 text-gray-400 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`}
-          fill="none" stroke="currentColor" viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+        <div className={`ml-3 p-1 rounded-full bg-stone-100 group-hover:bg-stone-200 transition-all shrink-0 ${open ? 'rotate-180' : ''}`}>
+          <svg
+            className="w-4 h-4 text-stone-500 transition-transform"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
       </button>
       {open && (
-        <div className="px-4 pb-4 border-t border-gray-100 pt-3">
+        <div className="px-5 pb-5 border-t border-stone-100 pt-4 animate-fade-in">
           {children}
         </div>
       )}

@@ -18,7 +18,7 @@ export default function Pronouns() {
         description={pronounsData.meta.description}
       />
 
-      <div className="space-y-4">
+      <div className="space-y-5">
         {pronounsData.sections.map((section, i) => (
           <SectionCard
             key={i}
