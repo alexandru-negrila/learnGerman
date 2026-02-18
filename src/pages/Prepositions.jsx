@@ -13,7 +13,7 @@ export default function Prepositions() {
     'Akkusativ Prepositions': 'border-l-red-400',
     'Dativ Prepositions': 'border-l-blue-400',
     'Wechselpräpositionen (Two-Way Prepositions)': 'border-l-purple-400',
-    'Genitiv Prepositions': 'border-l-green-400',
+    'Genitiv Prepositions': 'border-l-emerald-400',
   };
 
   return (
@@ -24,7 +24,7 @@ export default function Prepositions() {
         description={prepositionsData.meta.description}
       />
 
-      <div className="space-y-4">
+      <div className="space-y-5">
         {prepositionsData.sections.map((section, si) => (
           <SectionCard
             key={si}
@@ -35,27 +35,32 @@ export default function Prepositions() {
           >
             {/* Mnemonic */}
             {section.mnemonic && (
-              <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mb-3 text-sm">
-                <span className="font-semibold text-amber-800">💡 {t('mnemonic')}:</span>{' '}
-                <span className="text-amber-700">{section.mnemonic}</span>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-4 text-sm flex items-start gap-2">
+                <span className="text-amber-500 shrink-0 mt-0.5">💡</span>
+                <div>
+                  <span className="font-semibold text-amber-800">{t('mnemonic')}:</span>{' '}
+                  <span className="text-amber-700">{section.mnemonic}</span>
+                </div>
               </div>
             )}
 
             {/* Preposition List */}
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               {section.items.map((item, ii) => (
                 <div
                   key={ii}
-                  className={`border-l-4 ${caseColors[section.title] || 'border-l-gray-300'} bg-white rounded-r-lg border border-gray-100 p-3`}
+                  className={`border-l-4 ${caseColors[section.title] || 'border-l-stone-300'} bg-white rounded-r-xl border border-stone-100 p-4 hover:bg-stone-50/50 transition-colors`}
                 >
                   <div className="flex items-baseline gap-2 flex-wrap">
-                    <span className="font-bold text-gray-900 text-lg">{item.german}</span>
-                    <span className="text-gray-500 text-sm">— {item.english}</span>
+                    <span className="font-bold text-stone-900 text-lg">{item.german}</span>
+                    <span className="text-stone-400 text-sm">— {item.english}</span>
                   </div>
-                  <div className="mt-1.5 text-sm">
-                    <span className="text-gray-700 italic">"{item.example}"</span>
-                    <span className="text-gray-400 ml-2">({item.exampleEn})</span>
+                  <div className="mt-2 text-sm flex items-start gap-1.5">
+                    <span className="text-stone-300 shrink-0">"</span>
+                    <span className="text-stone-600 italic">{item.example}</span>
+                    <span className="text-stone-300 shrink-0">"</span>
                   </div>
+                  <p className="text-xs text-stone-400 mt-0.5 ml-3">({item.exampleEn})</p>
                 </div>
               ))}
             </div>

@@ -110,38 +110,52 @@ export default function SmartSearch() {
     autoComplete: 'off',
   };
 
+  const categoryIcons = {
+    verb: '📝',
+    preposition: '📍',
+    conjunction: '🔤',
+    questionWord: '🔤',
+    connector: '🔤',
+    negation: '🔤',
+    article: '📋',
+    pronoun: '👤',
+  };
+
   return (
     <div ref={containerRef} className="relative">
-      {/* Desktop input with Ctrl+K hint badge */}
+      {/* Desktop input */}
       <div className="hidden sm:block relative">
+        <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-stone-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
         <input
           {...sharedInputProps}
           ref={desktopInputRef}
-          className="w-full sm:w-48 lg:w-56 pl-3 pr-14 py-1.5 rounded-lg border border-gray-200 text-sm outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-100 bg-white"
+          className="w-full sm:w-48 lg:w-56 pl-8 pr-14 py-1.5 rounded-xl border border-stone-200 text-sm outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-100 bg-stone-50/80 hover:bg-white focus:bg-white transition-all placeholder:text-stone-400"
         />
-        <kbd className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 flex items-center text-[10px] text-gray-400 select-none">
-          <span className="px-1 py-0.5 rounded border border-gray-200 bg-gray-50 leading-none font-sans">⌃K</span>
+        <kbd className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 flex items-center text-[10px] text-stone-400 select-none">
+          <span className="px-1.5 py-0.5 rounded-md border border-stone-200 bg-white leading-none font-sans shadow-sm">⌃K</span>
         </kbd>
       </div>
 
       {/* Mobile: icon or expanded overlay */}
       <div className="sm:hidden">
         {isMobileExpanded ? (
-          <div className="fixed inset-x-0 top-0 h-14 bg-white flex items-center px-4 gap-2 z-[60] border-b border-gray-200">
-            <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="fixed inset-x-0 top-0 h-14 glass flex items-center px-4 gap-2 z-[60] border-b border-stone-200/60 shadow-sm">
+            <svg className="w-4 h-4 text-stone-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <input
               {...sharedInputProps}
               ref={mobileInputRef}
-              className="flex-1 px-3 py-1.5 rounded-lg border border-gray-200 text-sm outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-100 bg-white"
+              className="flex-1 px-3 py-1.5 rounded-xl border border-stone-200 text-sm outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-100 bg-white transition-all"
             />
             <button
               onClick={close}
-              className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer bg-white border-0 shrink-0"
+              className="p-1.5 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer bg-transparent border-0 shrink-0"
               aria-label="Close search"
             >
-              <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -149,10 +163,10 @@ export default function SmartSearch() {
         ) : (
           <button
             onClick={openMobile}
-            className="p-2 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer bg-white border-0"
+            className="p-2 rounded-lg hover:bg-stone-100 transition-all active:scale-95 cursor-pointer bg-transparent border-0"
             aria-label={t('searchPlaceholder') || 'Search words'}
           >
-            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </button>
@@ -164,48 +178,51 @@ export default function SmartSearch() {
         <div
           id="smart-search-results"
           role="listbox"
-          className={`absolute mt-1 bg-white rounded-xl border border-gray-200 shadow-lg max-h-80 overflow-y-auto z-[60] ${
+          className={`absolute mt-2 bg-white rounded-2xl border border-stone-200 shadow-xl shadow-stone-900/10 max-h-80 overflow-y-auto z-[60] animate-scale-in ${
             isMobileExpanded ? 'fixed left-4 right-4 top-14' : 'right-0 w-80 sm:w-96 top-full'
           }`}
         >
           {results.length > 0 ? (
-            results.map((entry, i) => (
-              <button
-                key={entry.id}
-                id={entry.id}
-                role="option"
-                aria-selected={i === highlightedIndex}
-                onClick={() => handleSelect(entry)}
-                className={`w-full text-left px-4 py-2.5 border-0 cursor-pointer transition-colors ${
-                  i === highlightedIndex ? 'bg-blue-50' : 'bg-white hover:bg-gray-50'
-                } ${i > 0 ? 'border-t border-gray-100' : ''}`}
-                style={i > 0 ? { borderTopWidth: '1px', borderTopStyle: 'solid', borderTopColor: '#f3f4f6' } : {}}
-              >
-                <div className="flex items-baseline justify-between gap-2">
-                  <div className="text-sm">
-                    <span className="font-semibold text-gray-900">{entry.german}</span>
-                    <span className="text-gray-400 mx-1">=</span>
-                    <span className="text-gray-600">{entry.english}</span>
+            <div className="py-1">
+              {results.map((entry, i) => (
+                <button
+                  key={entry.id}
+                  id={entry.id}
+                  role="option"
+                  aria-selected={i === highlightedIndex}
+                  onClick={() => handleSelect(entry)}
+                  className={`w-full text-left px-4 py-2.5 border-0 cursor-pointer transition-all ${
+                    i === highlightedIndex ? 'bg-brand-50' : 'bg-white hover:bg-stone-50'
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs shrink-0">{categoryIcons[entry.category] || '📄'}</span>
+                    <div className="flex items-baseline gap-1.5 flex-1 min-w-0">
+                      <span className="font-semibold text-stone-900 text-sm">{entry.german}</span>
+                      <span className="text-stone-300">=</span>
+                      <span className="text-stone-500 text-sm truncate">{entry.english}</span>
+                    </div>
+                    <span className="text-[10px] text-stone-400 bg-stone-100 px-1.5 py-0.5 rounded-full whitespace-nowrap shrink-0">
+                      {entry.categoryLabel}
+                    </span>
                   </div>
-                  <span className="text-[10px] text-gray-400 whitespace-nowrap shrink-0">
-                    {entry.categoryLabel}
-                  </span>
-                </div>
-                {entry.example && (
-                  <p className="text-xs text-gray-500 italic mt-0.5 truncate">
-                    {entry.example}
-                  </p>
-                )}
-                {entry.isVerb && (
-                  <span className="text-xs text-blue-600 font-medium mt-0.5 inline-block">
-                    {t('seeVerbForms') || 'See verb forms'} →
-                  </span>
-                )}
-              </button>
-            ))
+                  {entry.example && (
+                    <p className="text-xs text-stone-400 italic mt-0.5 ml-5 truncate">
+                      {entry.example}
+                    </p>
+                  )}
+                  {entry.isVerb && (
+                    <span className="text-xs text-brand-600 font-medium mt-0.5 ml-5 inline-block">
+                      {t('seeVerbForms') || 'See verb forms'} →
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
           ) : (
-            <div className="px-4 py-3 text-sm text-gray-400">
-              {t('noResults') || 'No results found'}
+            <div className="px-4 py-6 text-center">
+              <p className="text-sm text-stone-400">{t('noResults') || 'No results found'}</p>
+              <p className="text-xs text-stone-300 mt-1">Try a different spelling or keyword</p>
             </div>
           )}
         </div>

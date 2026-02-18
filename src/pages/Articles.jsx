@@ -24,7 +24,7 @@ export default function Articles() {
         description={articlesData.meta.description}
       />
 
-      <div className="space-y-4">
+      <div className="space-y-5">
         {articlesData.sections.map((section, i) => {
           // Table sections (with headers/rows)
           if (section.headers && section.rows) {
@@ -39,16 +39,18 @@ export default function Articles() {
           if (section.rules && section.rules[0]?.case) {
             return (
               <SectionCard key={i} id={slugify(section.title)} highlighted={highlightId === slugify(section.title)} title={section.title} description={section.description}>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {section.rules.map((rule, ri) => (
-                    <div key={ri} className="bg-gray-50 rounded-lg p-3 border border-gray-100">
+                    <div key={ri} className="bg-stone-50 rounded-xl p-4 border border-stone-100">
                       <div className="flex items-baseline gap-2 flex-wrap">
-                        <span className="font-bold text-gray-900">{rule.case}</span>
-                        <span className="text-sm text-blue-600 font-medium">{rule.question}</span>
+                        <span className="font-bold text-stone-900">{rule.case}</span>
+                        <span className="text-sm text-brand-600 font-medium bg-brand-50 px-2 py-0.5 rounded-full">{rule.question}</span>
                       </div>
-                      <p className="text-sm text-gray-600 mt-1">{rule.usage}</p>
-                      <p className="text-sm mt-1.5 italic text-gray-700">"{rule.example}"</p>
-                      <p className="text-xs text-gray-400">({rule.exampleEn})</p>
+                      <p className="text-sm text-stone-600 mt-1.5">{rule.usage}</p>
+                      <div className="mt-2 text-sm">
+                        <span className="text-stone-600 italic">"{rule.example}"</span>
+                        <span className="text-xs text-stone-400 ml-2">({rule.exampleEn})</span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -62,12 +64,12 @@ export default function Articles() {
               <SectionCard key={i} id={slugify(section.title)} highlighted={highlightId === slugify(section.title)} title={section.title} description={section.description}>
                 <div className="space-y-3">
                   {section.genderTips.map((tip, ti) => (
-                    <div key={ti} className={`rounded-lg border p-3 ${genderColors[tip.color]}`}>
+                    <div key={ti} className={`rounded-xl border p-4 ${genderColors[tip.color]}`}>
                       <h4 className="font-bold mb-2">{tip.gender}</h4>
-                      <div className="text-sm space-y-1">
+                      <div className="text-sm space-y-1.5">
                         <div>
                           <span className="font-medium">Endings: </span>
-                          {tip.endings.join(', ')}
+                          <span className="font-mono text-xs">{tip.endings.join(', ')}</span>
                         </div>
                         <div>
                           <span className="font-medium">Categories: </span>

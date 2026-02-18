@@ -38,17 +38,22 @@ export default function Phrases() {
       />
 
       {/* Search */}
-      <div className="mb-5">
-        <input
-          type="text"
-          placeholder={t('search')}
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          className="w-full max-w-md px-3 py-2 rounded-lg border border-gray-200 text-sm outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-100"
-        />
+      <div className="mb-6">
+        <div className="relative max-w-md">
+          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input
+            type="text"
+            placeholder={t('search')}
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            className="w-full pl-9 pr-3 py-2 rounded-xl border border-stone-200 text-sm outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-100 bg-white transition-all"
+          />
+        </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-5">
         {filteredSections.map((section, si) => (
           <SectionCard key={si} title={section.title} description={section.description}>
             {/* Standard phrase items */}
@@ -57,16 +62,16 @@ export default function Phrases() {
                 {section.items.map((item, ii) => (
                   <div
                     key={ii}
-                    className="flex items-start gap-3 py-2 px-2 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="flex items-start gap-3 py-2.5 px-3 rounded-xl hover:bg-stone-50 transition-colors"
                   >
-                    <span className={`text-xs px-1.5 py-0.5 rounded shrink-0 mt-0.5 ${
-                      item.formal ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-500'
+                    <span className={`text-[10px] px-2 py-0.5 rounded-full shrink-0 mt-1 font-medium ${
+                      item.formal ? 'bg-brand-50 text-brand-600' : 'bg-stone-100 text-stone-500'
                     }`}>
                       {item.formal ? t('formal') : t('informal')}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <p className="font-medium text-gray-900">{item.german}</p>
-                      <p className="text-sm text-gray-500">{item.english}</p>
+                      <p className="font-medium text-stone-900">{item.german}</p>
+                      <p className="text-sm text-stone-500">{item.english}</p>
                     </div>
                   </div>
                 ))}
@@ -75,21 +80,21 @@ export default function Phrases() {
 
             {/* Speaking situation phrases */}
             {section.situationPhrases && (
-              <div className="overflow-x-auto rounded-lg border border-gray-200">
-                <table className="w-full text-sm">
+              <div className="overflow-x-auto rounded-xl border border-stone-200 shadow-sm shadow-stone-900/[0.03]">
+                <table className="w-full text-sm data-table">
                   <thead>
-                    <tr className="bg-gray-50 border-b border-gray-200">
-                      <th className="text-left px-3 py-2 font-semibold text-gray-700">Phrase</th>
-                      <th className="text-left px-3 py-2 font-semibold text-gray-700">Translation</th>
-                      <th className="text-left px-3 py-2 font-semibold text-gray-700">{t('example')}</th>
+                    <tr className="bg-stone-50/80 border-b border-stone-200">
+                      <th className="text-left px-4 py-2.5 font-semibold text-stone-600 text-xs uppercase tracking-wide">Phrase</th>
+                      <th className="text-left px-4 py-2.5 font-semibold text-stone-600 text-xs uppercase tracking-wide">Translation</th>
+                      <th className="text-left px-4 py-2.5 font-semibold text-stone-600 text-xs uppercase tracking-wide">{t('example')}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {section.situationPhrases.map((item, ii) => (
-                      <tr key={ii} className={`border-b border-gray-100 ${ii % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} hover:bg-blue-50/30 transition-colors`}>
-                        <td className="px-3 py-2 font-medium text-gray-900">{item.phrase}</td>
-                        <td className="px-3 py-2 text-gray-600">{item.translation}</td>
-                        <td className="px-3 py-2 text-gray-500 italic">{item.example}</td>
+                      <tr key={ii} className={`border-b border-stone-100 last:border-b-0 ${ii % 2 === 0 ? 'bg-white' : 'bg-stone-50/40'} hover:bg-brand-50/40 transition-colors`}>
+                        <td className="px-4 py-2.5 font-medium text-stone-900">{item.phrase}</td>
+                        <td className="px-4 py-2.5 text-stone-600">{item.translation}</td>
+                        <td className="px-4 py-2.5 text-stone-400 italic">{item.example}</td>
                       </tr>
                     ))}
                   </tbody>

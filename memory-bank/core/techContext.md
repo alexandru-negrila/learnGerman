@@ -35,11 +35,62 @@ Each JSON file follows a self-documenting structure with metadata:
 }
 ```
 
+## Design System — "Calm Focus"
+Defined in `src/index.css` via TailwindCSS v4 `@theme` directive:
+
+### Brand Colors (indigo)
+`brand-50` (#eef2ff) through `brand-700` (#4338ca) — used for active nav, buttons, links, focus rings
+
+### Surface Colors (warm stone)
+`surface-50` (#fafaf9) through `surface-300` (#d6d3d1) — backgrounds, replacing cold gray-50
+
+### Category Colors (consistent throughout app)
+| Topic | Color | Usage |
+|-------|-------|-------|
+| Verbs | indigo | Cards, verb highlights |
+| Pronouns | purple | Cards, category badges |
+| Prepositions | emerald | Cards, border accents |
+| Articles | amber | Cards, rule callouts |
+| Sentences | rose | Cards, structure blocks |
+| Phrases | cyan | Cards |
+| Numbers | teal | Cards |
+| Practice | orange | Cards |
+
+### Typography
+- **Font**: Inter (Google Fonts CDN, loaded via index.html `<link>`)
+- **Tracking**: `tracking-tight` for headings, `tracking-wide` for table headers
+- **Hierarchy**: extrabold > bold > semibold > medium for clear visual weight
+
+### Animation Classes (defined in index.css)
+- `.animate-fade-in` — subtle entry (opacity + translateY 6px)
+- `.animate-fade-in-up` — stronger entry (opacity + translateY 12px)
+- `.animate-scale-in` — scale from 0.95 (used for search dropdown)
+- `.animate-slide-down` — max-height animation (mobile menu)
+- `.stagger-children` — nth-child delays for grid items (50ms increments)
+- `.hover-lift` — translateY(-2px) + shadow on hover
+- `.glass` — backdrop-blur glassmorphism effect
+- `.gradient-text` — indigo-to-purple gradient text
+- `.progress-bar` — smooth width transition (quiz progress)
+
+### Spacing & Radius Conventions
+- Cards: `rounded-2xl` (1rem), `p-5`/`p-6`
+- Inputs/buttons: `rounded-xl` (0.75rem), `py-2`/`py-3`
+- Badges/pills: `rounded-full`
+- Section spacing: `space-y-5` between cards
+- Page header bottom margin: `mb-8`
+
+### Interactive States
+- Buttons: `active:scale-95` or `active:scale-[0.98]`
+- Cards: `.hover-lift` (translateY + shadow)
+- Focus: `focus:border-brand-400 focus:ring-2 focus:ring-brand-100`
+- Links: `transition-all duration-200`
+
 ## Component Architecture
-- `Layout.jsx` — App shell with sticky header, responsive nav (desktop + mobile hamburger), language toggle, footer
-- `DataTable.jsx` — Reusable table component for declension/conjugation data
-- `SectionCard.jsx` — Collapsible card with title/description
-- `PageHeader.jsx` — Page title with icon
+- `Layout.jsx` — Glassmorphism header (.glass), responsive nav with active pill indicator, language toggle, animated mobile menu (.mobile-nav-enter), footer
+- `DataTable.jsx` — Rounded-xl table with uppercase tracking-wide headers, brand-50 hover rows, soft zebra striping
+- `SectionCard.jsx` — Rounded-2xl card with circular chevron button, smooth content animation (.animate-fade-in), highlight ring effect
+- `PageHeader.jsx` — Title with icon + gradient accent line (brand-500 → brand-300 → transparent)
+- `SmartSearch.jsx` — Search icon prefix, rounded-xl input, category icon badges in results, rounded-2xl dropdown with scale-in animation
 
 ## Page Components (9 routes)
 - `Home.jsx` — Topic grid with color-coded cards and quick tips
