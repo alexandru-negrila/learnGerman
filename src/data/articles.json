@@ -28,6 +28,33 @@
       ]
     },
     {
+      "title": "Possessive Articles (my, your, his...)",
+      "description": "Possessivartikel — each personal pronoun has a matching possessive article",
+      "headers": ["Possessive Article", "English"],
+      "rows": [
+        { "label": "ich", "cells": ["mein", "my"] },
+        { "label": "du", "cells": ["dein", "your (informal)"] },
+        { "label": "er", "cells": ["sein", "his"] },
+        { "label": "sie (she)", "cells": ["ihr", "her"] },
+        { "label": "es", "cells": ["sein", "its"] },
+        { "label": "wir", "cells": ["unser", "our"] },
+        { "label": "ihr", "cells": ["euer", "your (plural)"] },
+        { "label": "sie (they)", "cells": ["ihr", "their"] },
+        { "label": "Sie (formal)", "cells": ["Ihr", "your (formal)"] }
+      ]
+    },
+    {
+      "title": "Possessive Articles Declension",
+      "description": "All possessive articles follow the same endings as 'ein'. Example with 'mein'. Note: 'euer' drops the second -e- when an ending is added (euer → eure, eurem, euren, eures).",
+      "headers": ["Maskulin", "Feminin", "Neutrum", "Plural"],
+      "rows": [
+        { "label": "Nominativ", "cells": ["mein", "meine", "mein", "meine"] },
+        { "label": "Akkusativ", "cells": ["meinen", "meine", "mein", "meine"] },
+        { "label": "Dativ", "cells": ["meinem", "meiner", "meinem", "meinen"] },
+        { "label": "Genitiv", "cells": ["meines", "meiner", "meines", "meiner"] }
+      ]
+    },
+    {
       "title": "When to Use Each Case",
       "description": "Quick reference for case usage",
       "rules": [

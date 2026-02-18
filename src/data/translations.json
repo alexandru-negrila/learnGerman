@@ -38,7 +38,10 @@
     "allTopics": "All Topics",
     "showAnswer": "Show Answer",
     "tryAgain": "Try Again",
-    "questionOf": "of"
+    "questionOf": "of",
+    "searchPlaceholder": "Search words...",
+    "seeVerbForms": "See verb forms",
+    "noResults": "No results found"
   },
   "ro": {
     "appTitle": "InvataGermana",
@@ -79,6 +82,9 @@
     "allTopics": "Toate subiectele",
     "showAnswer": "Arata raspunsul",
     "tryAgain": "Incearca din nou",
-    "questionOf": "din"
+    "questionOf": "din",
+    "searchPlaceholder": "Cauta cuvinte...",
+    "seeVerbForms": "Vezi formele verbului",
+    "noResults": "Niciun rezultat"
   }
 }

@@ -94,6 +94,88 @@
         { "german": "um halb drei", "english": "at half past two (2:30)", "formal": false },
         { "german": "Viertel vor/nach ...", "english": "Quarter to/past ...", "formal": false }
       ]
+    },
+    {
+      "title": "auf Vorschläge zögernd reagieren",
+      "description": "Reacting hesitantly to suggestions",
+      "situationPhrases": [
+        {
+          "phrase": "Also, ich weiß nicht.",
+          "translation": "Well, I don't know.",
+          "example": "Wollen wir ins Kino gehen? — Also, ich weiß nicht."
+        },
+        {
+          "phrase": "... finde ich eher langweilig.",
+          "translation": "I find ... rather boring.",
+          "example": "Lesungen finde ich eher langweilig."
+        },
+        {
+          "phrase": "... finde ich eher uninteressant.",
+          "translation": "I find ... rather uninteresting.",
+          "example": "Museen finde ich eher uninteressant."
+        },
+        {
+          "phrase": "Hm, meinst du?",
+          "translation": "Hm, do you think so?",
+          "example": "Das soll toll sein! — Hm, meinst du?"
+        },
+        {
+          "phrase": "Vielleicht.",
+          "translation": "Maybe. / Perhaps.",
+          "example": "Wollen wir das versuchen? — Vielleicht."
+        },
+        {
+          "phrase": "Ich muss eigentlich ...",
+          "translation": "I actually have to ...",
+          "example": "Ich muss eigentlich noch arbeiten."
+        },
+        {
+          "phrase": "Ich möchte eigentlich ...",
+          "translation": "I would actually like to ...",
+          "example": "Ich möchte eigentlich lieber zu Hause bleiben."
+        }
+      ]
+    },
+    {
+      "title": "jemanden überreden / überzeugen",
+      "description": "Persuading / Convincing someone",
+      "situationPhrases": [
+        {
+          "phrase": "Na los!",
+          "translation": "Come on! / Go on!",
+          "example": "Na los, wir gehen zusammen!"
+        },
+        {
+          "phrase": "Das ist sicher spannend.",
+          "translation": "That is surely exciting.",
+          "example": "Na los, das ist sicher spannend!"
+        },
+        {
+          "phrase": "Das ist sicher aufregend.",
+          "translation": "That is surely exciting/thrilling.",
+          "example": "Na los, das ist sicher aufregend!"
+        },
+        {
+          "phrase": "Ach, komm schon!",
+          "translation": "Oh, come on!",
+          "example": "Ach, komm schon! Es macht Spaß!"
+        },
+        {
+          "phrase": "Das macht bestimmt Spaß!",
+          "translation": "That will definitely be fun!",
+          "example": "Ach, komm schon! Das macht bestimmt Spaß!"
+        },
+        {
+          "phrase": "Komm schon!",
+          "translation": "Come on!",
+          "example": "Komm schon, versuch es mal!"
+        },
+        {
+          "phrase": "Das ist doch mal was anderes!",
+          "translation": "That's something different for once!",
+          "example": "Komm schon, das ist doch mal was anderes!"
+        }
+      ]
     }
   ]
 }
