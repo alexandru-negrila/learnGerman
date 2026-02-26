@@ -1,6 +1,6 @@
 # Progress - LearnGerman
 
-## Overall Status: V1 Complete — Merged to Main
+## Overall Status: V1.2 — Wechselpräpositionen Deep Dive + UX Fixes (PR #7)
 
 ## Milestones
 
@@ -13,9 +13,9 @@
 - [x] Project structure created
 
 ### M2: Data Layer - DONE (8 files)
-- [x] verbs.json — 30+ verbs, 3 tenses (Prasens, Prateritum, Perfekt), 4 categories (essential, modal, regular, irregular)
+- [x] verbs.json — 35+ verbs, 3 tenses (Prasens, Prateritum, Perfekt), 5 categories (essential, modal, regular, irregular, Wechselpräpositionen)
 - [x] pronouns.json — 6 tables: personal, possessive, reflexive, relative, interrogative, demonstrative
-- [x] prepositions.json — 4 case groups (Akk, Dat, Wechsel, Gen) with mnemonics and examples
+- [x] prepositions.json — 4 case groups (Akk, Dat, Wechsel, Gen) with mnemonics, examples, and rich Wechselpräpositionen content (caseRule, articleTable, pairedExamples, contractions, verbPairs, dialogues)
 - [x] articles.json — definite/indefinite articles, case rules, 3 adjective ending tables, gender tips
 - [x] sentences.json — Hauptsatz, Nebensatz, questions, negation, connectors
 - [x] phrases.json — 7 categories: greetings, introductions, polite, everyday, shopping, directions, time
@@ -25,9 +25,9 @@
 ### M3: Core UI - DONE (9 pages, 4 components)
 - [x] Layout with sticky header, responsive nav (desktop + mobile hamburger), language toggle
 - [x] Home page with color-coded topic grid and quick tips
-- [x] Verbs page with tense selector (3 tenses) and search filtering
+- [x] Verbs page with tense selector (3 tenses), search filtering, and sticky controls bar
 - [x] Pronouns page with 6 declension tables
-- [x] Prepositions page with color-coded case cards and mnemonics
+- [x] Prepositions page with color-coded case cards, mnemonics, and rich Wechselpräpositionen section (case rules, article table, paired examples, contractions, verb pairs, dialogues)
 - [x] Articles & Cases page with tables, case rules, adjective endings, gender tips
 - [x] Sentence Structure page with visual word order patterns and conjunction tables
 - [x] Common Phrases page with formal/informal tags and search
@@ -52,7 +52,7 @@
 - [x] KRIS memory-bank documentation
 - [ ] Dark mode (backlog)
 - [x] Global search (done in V1 — SmartSearch component)
-- [ ] Vercel deployment (user to complete)
+- [x] Vercel deployment — vercel.json with SPA catch-all rewrite
 
 ### M6: UI/UX Redesign — "Calm Focus" - DONE (V1.1)
 - [x] Design system in index.css (@theme, animations, utilities)
@@ -70,6 +70,18 @@
 - [x] Micro-interactions: active:scale, hover-lift, animate-fade-in, animate-scale-in
 - [x] Custom scrollbar styling, selection color, focus-visible rings
 - [x] Production build passes with 0 warnings
+
+### M7: Wechselpräpositionen Deep Dive + UX Fixes - DONE (V1.2, PR #7)
+- [x] Rich Wechselpräpositionen section — case rules (Wo?/Wohin?), article declension table, paired Dativ/Akkusativ examples, contraction rules (im/ins/am/ans)
+- [x] Verb pair tables — legen/liegen, stellen/stehen, hängen with Akkusativ/Dativ forms
+- [x] Wo?-only verbs — sitzen, bleiben, wohnen, arbeiten, schlafen, leben
+- [x] Dialogue exercises — 4 dialogue groups with A/B speaker exchanges for each verb pair
+- [x] 7 new Wechselpräpositionen verbs in verbs.json — legen, liegen, stellen, stehen, hängen, sitzen, bleiben (new 5th category)
+- [x] Sticky verb controls — tense selector and search bar float below header on scroll (`sticky top-14 z-40 glass`)
+- [x] SPA routing fix — vercel.json catch-all rewrite prevents 404 on page refresh/direct navigation
+- [x] Polymorphic section rendering — JSON data keys drive conditional rendering (pattern from Articles.jsx extended to Prepositions.jsx)
+- [x] Production build passes
+- [x] Git workflow — feature branch `twoWayPrepositions`, PR #7 created via GitHub REST API
 
 ## File Inventory
 | Directory | Files | Purpose |
