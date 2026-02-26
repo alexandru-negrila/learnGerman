@@ -340,6 +340,82 @@
           }
         }
       ]
+    },
+    {
+      "title": "Wechselpräpositionen Verbs (Wo? / Wohin?)",
+      "description": "Verb pairs for movement (Wohin?) and position (Wo?) — used with two-way prepositions",
+      "verbs": [
+        {
+          "infinitive": "legen",
+          "english": "to lay/put (flat) — Wohin?",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["lege", "legst", "legt", "legen", "legt", "legen"],
+            "Präteritum": ["legte", "legtest", "legte", "legten", "legtet", "legten"],
+            "Perfekt": ["habe gelegt", "hast gelegt", "hat gelegt", "haben gelegt", "habt gelegt", "haben gelegt"]
+          }
+        },
+        {
+          "infinitive": "liegen",
+          "english": "to lie/be lying (flat) — Wo?",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["liege", "liegst", "liegt", "liegen", "liegt", "liegen"],
+            "Präteritum": ["lag", "lagst", "lag", "lagen", "lagt", "lagen"],
+            "Perfekt": ["habe gelegen", "hast gelegen", "hat gelegen", "haben gelegen", "habt gelegen", "haben gelegen"]
+          }
+        },
+        {
+          "infinitive": "stellen",
+          "english": "to put/place (upright) — Wohin?",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["stelle", "stellst", "stellt", "stellen", "stellt", "stellen"],
+            "Präteritum": ["stellte", "stelltest", "stellte", "stellten", "stelltet", "stellten"],
+            "Perfekt": ["habe gestellt", "hast gestellt", "hat gestellt", "haben gestellt", "habt gestellt", "haben gestellt"]
+          }
+        },
+        {
+          "infinitive": "stehen",
+          "english": "to stand/be standing — Wo?",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["stehe", "stehst", "steht", "stehen", "steht", "stehen"],
+            "Präteritum": ["stand", "standest", "stand", "standen", "standet", "standen"],
+            "Perfekt": ["habe gestanden", "hast gestanden", "hat gestanden", "haben gestanden", "habt gestanden", "haben gestanden"]
+          }
+        },
+        {
+          "infinitive": "hängen",
+          "english": "to hang — Wohin? (haben) / Wo? (haben)",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["hänge", "hängst", "hängt", "hängen", "hängt", "hängen"],
+            "Präteritum": ["hing", "hingst", "hing", "hingen", "hingt", "hingen"],
+            "Perfekt": ["habe gehangen", "hast gehangen", "hat gehangen", "haben gehangen", "habt gehangen", "haben gehangen"]
+          }
+        },
+        {
+          "infinitive": "sitzen",
+          "english": "to sit — Wo? only",
+          "auxiliary": "haben",
+          "conjugations": {
+            "Präsens": ["sitze", "sitzt", "sitzt", "sitzen", "sitzt", "sitzen"],
+            "Präteritum": ["saß", "saßest", "saß", "saßen", "saßt", "saßen"],
+            "Perfekt": ["habe gesessen", "hast gesessen", "hat gesessen", "haben gesessen", "habt gesessen", "haben gesessen"]
+          }
+        },
+        {
+          "infinitive": "bleiben",
+          "english": "to stay/remain — Wo? only",
+          "auxiliary": "sein",
+          "conjugations": {
+            "Präsens": ["bleibe", "bleibst", "bleibt", "bleiben", "bleibt", "bleiben"],
+            "Präteritum": ["blieb", "bliebst", "blieb", "blieben", "bliebt", "blieben"],
+            "Perfekt": ["bin geblieben", "bist geblieben", "ist geblieben", "sind geblieben", "seid geblieben", "sind geblieben"]
+          }
+        }
+      ]
     }
   ]
 }

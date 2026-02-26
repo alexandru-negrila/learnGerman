@@ -39,6 +39,223 @@
       "title": "Wechselpräpositionen (Two-Way Prepositions)",
       "description": "Akkusativ with movement (wohin?), Dativ with location (wo?)",
       "mnemonic": "AN, AUF, HINTER, IN, NEBEN, ÜBER, UNTER, VOR, ZWISCHEN",
+      "caseRule": {
+        "akkusativ": { "question": "Wohin?", "meaning": "Where to?", "concept": "Movement / Direction" },
+        "dativ": { "question": "Wo?", "meaning": "Where?", "concept": "Position / Location" }
+      },
+      "articleTable": {
+        "headers": ["", "Maskulin", "Feminin", "Neutrum", "Plural"],
+        "rows": [
+          { "label": "Akkusativ", "cells": ["den", "die", "das", "die"] },
+          { "label": "Dativ", "cells": ["dem", "der", "dem", "den + n"] }
+        ]
+      },
+      "pairedExamples": [
+        {
+          "preposition": "auf",
+          "dativ": { "example": "auf dem Tisch", "exampleEn": "on the table" },
+          "akkusativ": { "example": "auf den Tisch", "exampleEn": "onto the table" }
+        },
+        {
+          "preposition": "in",
+          "dativ": { "example": "in der Küche", "exampleEn": "in the kitchen" },
+          "akkusativ": { "example": "in die Küche", "exampleEn": "into the kitchen" }
+        },
+        {
+          "preposition": "in (Kontraktion)",
+          "dativ": { "example": "im (in dem) Kino", "exampleEn": "in the cinema" },
+          "akkusativ": { "example": "ins (in das) Kino", "exampleEn": "into the cinema" }
+        },
+        {
+          "preposition": "an",
+          "dativ": { "example": "am (an dem) Bahnhof", "exampleEn": "at the station" },
+          "akkusativ": { "example": "an den Bahnhof", "exampleEn": "to the station" }
+        }
+      ],
+      "contractions": [
+        { "full": "in + dem", "contracted": "im" },
+        { "full": "in + das", "contracted": "ins" },
+        { "full": "an + dem", "contracted": "am" },
+        { "full": "an + das", "contracted": "ans" }
+      ],
+      "verbPairs": {
+        "description": "Some verbs always pair with Wohin? (movement) and Wo? (position)",
+        "pairs": [
+          { "wohin": "legen", "wo": "liegen", "wohinEn": "to lay/put (flat)", "woEn": "to lie/be lying" },
+          { "wohin": "stellen", "wo": "stehen", "wohinEn": "to put/place (upright)", "woEn": "to stand/be standing" },
+          { "wohin": "hängen", "wo": "hängen", "wohinEn": "to hang (action)", "woEn": "to hang/be hanging" }
+        ],
+        "woOnlyVerbs": [
+          { "german": "sitzen", "english": "to sit" },
+          { "german": "arbeiten", "english": "to work" },
+          { "german": "kaufen", "english": "to buy" },
+          { "german": "wohnen", "english": "to live/reside" },
+          { "german": "bleiben", "english": "to stay" },
+          { "german": "schlafen", "english": "to sleep" }
+        ],
+        "woOnlyNote": "These verbs have no Wohin pair — you can only ask Wo? because there is no movement!"
+      },
+      "dialogues": [
+        {
+          "verbPair": "legen / liegen",
+          "exchanges": [
+            {
+              "icon": "✏️",
+              "object": "der Stift",
+              "lines": [
+                { "speaker": "A", "text": "Wohin soll ich deinen Stift legen?" },
+                { "speaker": "B", "text": "Leg meinen Stift auf den Tisch." },
+                { "speaker": "B", "text": "Wo liegt mein Stift jetzt?" },
+                { "speaker": "A", "text": "Dein Stift liegt auf dem Tisch." }
+              ]
+            },
+            {
+              "icon": "📓",
+              "object": "das Heft",
+              "lines": [
+                { "speaker": "A", "text": "Wohin soll ich dein Heft legen?" },
+                { "speaker": "B", "text": "Leg mein Heft unter das Buch." },
+                { "speaker": "B", "text": "Wo liegt mein Heft jetzt?" },
+                { "speaker": "A", "text": "Dein Heft liegt unter dem Buch." }
+              ]
+            },
+            {
+              "icon": "🕶️",
+              "object": "die Sonnenbrille",
+              "lines": [
+                { "speaker": "A", "text": "Wohin soll ich deine Sonnenbrille legen?" },
+                { "speaker": "B", "text": "Leg meine Sonnenbrille in die Tasche." },
+                { "speaker": "B", "text": "Wo liegt meine Sonnenbrille jetzt?" },
+                { "speaker": "A", "text": "Deine Sonnenbrille liegt in der Tasche." }
+              ]
+            }
+          ]
+        },
+        {
+          "verbPair": "stellen / stehen",
+          "exchanges": [
+            {
+              "icon": "🥛",
+              "object": "das Glas",
+              "lines": [
+                { "speaker": "A", "text": "Wohin soll ich dein Glas stellen?" },
+                { "speaker": "B", "text": "Stell mein Glas auf das Regal." },
+                { "speaker": "B", "text": "Wo steht mein Glas jetzt?" },
+                { "speaker": "A", "text": "Dein Glas steht auf dem Regal." }
+              ]
+            },
+            {
+              "icon": "🎒",
+              "object": "die Tasche",
+              "lines": [
+                { "speaker": "A", "text": "Wohin soll ich deine Tasche stellen?" },
+                { "speaker": "B", "text": "Stell meine Tasche vor die Tür." },
+                { "speaker": "B", "text": "Wo steht meine Tasche jetzt?" },
+                { "speaker": "A", "text": "Deine Tasche steht vor der Tür." }
+              ]
+            },
+            {
+              "icon": "🪑",
+              "object": "der Stuhl",
+              "lines": [
+                { "speaker": "A", "text": "Wohin soll ich deinen Stuhl stellen?" },
+                { "speaker": "B", "text": "Stell meinen Stuhl neben den Tisch." },
+                { "speaker": "B", "text": "Wo steht mein Stuhl jetzt?" },
+                { "speaker": "A", "text": "Dein Stuhl steht neben dem Tisch." }
+              ]
+            }
+          ]
+        },
+        {
+          "verbPair": "hängen / hängen",
+          "exchanges": [
+            {
+              "icon": "🧥",
+              "object": "die Jacke",
+              "lines": [
+                { "speaker": "A", "text": "Wohin soll ich deine Jacke hängen?" },
+                { "speaker": "B", "text": "Häng meine Jacke an die Tür." },
+                { "speaker": "B", "text": "Wo hängt meine Jacke jetzt?" },
+                { "speaker": "A", "text": "Deine Jacke hängt an der Tür." }
+              ]
+            },
+            {
+              "icon": "🧣",
+              "object": "der Schal",
+              "lines": [
+                { "speaker": "A", "text": "Wohin soll ich deinen Schal hängen?" },
+                { "speaker": "B", "text": "Häng meinen Schal in den Schrank." },
+                { "speaker": "B", "text": "Wo hängt mein Schal jetzt?" },
+                { "speaker": "A", "text": "Dein Schal hängt im Schrank." }
+              ]
+            },
+            {
+              "icon": "📱",
+              "object": "das Handy",
+              "lines": [
+                { "speaker": "A", "text": "Wohin soll ich dein Handy hängen?" },
+                { "speaker": "B", "text": "Häng mein Handy über den Stuhl." },
+                { "speaker": "B", "text": "Wo hängt mein Handy jetzt?" },
+                { "speaker": "A", "text": "Dein Handy hängt über dem Stuhl." }
+              ]
+            }
+          ]
+        },
+        {
+          "verbPair": "Wo?-only Verbs",
+          "isWoOnly": true,
+          "exchanges": [
+            {
+              "icon": "🪑",
+              "object": "sitzen",
+              "lines": [
+                { "speaker": "B", "text": "Wo sitzt du?" },
+                { "speaker": "A", "text": "Ich sitze auf dem Stuhl neben dem Fenster." }
+              ]
+            },
+            {
+              "icon": "💼",
+              "object": "arbeiten",
+              "lines": [
+                { "speaker": "B", "text": "Wo arbeitest du?" },
+                { "speaker": "A", "text": "Ich arbeite im Büro. (in dem Büro)" }
+              ]
+            },
+            {
+              "icon": "🛍️",
+              "object": "kaufen",
+              "lines": [
+                { "speaker": "B", "text": "Wo kaufst du das?" },
+                { "speaker": "A", "text": "Ich kaufe das im Supermarkt." }
+              ]
+            },
+            {
+              "icon": "🏠",
+              "object": "wohnen",
+              "lines": [
+                { "speaker": "B", "text": "Wo wohnst du?" },
+                { "speaker": "A", "text": "Ich wohne in der Stadt. / in einem Haus." }
+              ]
+            },
+            {
+              "icon": "🛏️",
+              "object": "schlafen",
+              "lines": [
+                { "speaker": "B", "text": "Wo schläfst du?" },
+                { "speaker": "A", "text": "Ich schlafe im Schlafzimmer. (in dem Schlafzimmer)" }
+              ]
+            },
+            {
+              "icon": "⏳",
+              "object": "bleiben",
+              "lines": [
+                { "speaker": "B", "text": "Wo bleibst du heute?" },
+                { "speaker": "A", "text": "Ich bleibe zu Hause / im Hotel." }
+              ]
+            }
+          ]
+        }
+      ],
       "items": [
         { "german": "an", "english": "at / on (vertical)", "example": "Das Bild hängt an der Wand. / Ich hänge das Bild an die Wand.", "exampleEn": "The picture hangs on the wall. / I hang the picture on the wall." },
         { "german": "auf", "english": "on (horizontal)", "example": "Das Buch liegt auf dem Tisch. / Ich lege das Buch auf den Tisch.", "exampleEn": "The book is on the table. / I put the book on the table." },

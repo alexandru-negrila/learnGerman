@@ -28,8 +28,8 @@ export default function Verbs() {
         description={verbsData.meta.description}
       />
 
-      {/* Controls */}
-      <div className="flex flex-wrap items-center gap-3 mb-6">
+      {/* Controls — sticky below header */}
+      <div className="flex flex-wrap items-center gap-3 mb-6 sticky top-14 z-40 glass border-b border-stone-200/60 -mx-4 sm:-mx-6 px-4 sm:px-6 py-3 shadow-sm shadow-stone-900/[0.03]">
         {/* Tense Selector */}
         <div className="flex rounded-xl border border-stone-200 overflow-hidden shadow-sm">
           {verbsData.tenses.map(tense => (
