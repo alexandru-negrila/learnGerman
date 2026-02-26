@@ -17,9 +17,9 @@
 
 ## Data Architecture
 All German language content lives in `/src/data/` as JSON files:
-- `verbs.json` — 30+ verbs, 4 categories (essential, modal, regular, irregular), 3 tenses
+- `verbs.json` — 35+ verbs, 5 categories (essential, modal, regular, irregular, Wechselpräpositionen), 3 tenses
 - `pronouns.json` — 6 tables: personal, possessive, reflexive, relative, interrogative, demonstrative
-- `prepositions.json` — 4 case groups (Akk, Dat, Wechsel, Gen) with mnemonics and examples
+- `prepositions.json` — 4 case groups (Akk, Dat, Wechsel, Gen) with mnemonics, examples, and rich Wechselpräpositionen content (case rules, article table, paired examples, contractions, verb pairs, dialogues)
 - `articles.json` — Definite/indefinite articles, case rules, 3 adjective ending tables, gender tips
 - `sentences.json` — Hauptsatz, Nebensatz, questions, negation, connectors
 - `phrases.json` — 7 categories: greetings, introductions, polite, everyday, shopping, directions, time
@@ -94,9 +94,9 @@ Defined in `src/index.css` via TailwindCSS v4 `@theme` directive:
 
 ## Page Components (9 routes)
 - `Home.jsx` — Topic grid with color-coded cards and quick tips
-- `Verbs.jsx` — Tense selector + search + conjugation tables
+- `Verbs.jsx` — Tense selector + search (sticky below header on scroll) + conjugation tables
 - `Pronouns.jsx` — Declension tables for all pronoun types
-- `Prepositions.jsx` — Color-coded case cards with mnemonics
+- `Prepositions.jsx` — Color-coded case cards with mnemonics; Wechselpräpositionen section has rich content: case rule cards, DataTable for article declensions, paired Dativ/Akkusativ examples grid, contractions note, verb pair tables, dialogue exchanges
 - `Articles.jsx` — Article tables, case rules, gender tips
 - `Sentences.jsx` — Word order patterns, conjunctions, question words
 - `Phrases.jsx` — Phrase list with formal/informal tags and search
@@ -110,6 +110,7 @@ Defined in `src/index.css` via TailwindCSS v4 `@theme` directive:
 - **Target**: Vercel (framework preset: Vite)
 - **Build**: `npm run build` → `dist/`
 - **Env vars**: None required
+- **SPA Routing**: `vercel.json` with catch-all rewrite (`/(.*) → /index.html`) to support client-side routing on page refresh/direct navigation
 - Also works on: Netlify, GitHub Pages, any static file server
 
 ## Development Constraints

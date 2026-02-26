@@ -29,19 +29,21 @@ words × 1.3 = estimated tokens
 - All German language data lives in `/src/data/*.json` files
 - Data files are human-readable and easily editable
 - Components are data-driven — adding new content requires zero code changes
+- Polymorphic sections: JSON data keys determine rendering behavior (optional keys trigger conditional blocks in page components)
 - Mobile-first responsive design
 - No backend, no database, fully static SPA
 - EN/RO language switch via `translations.json` and `useLanguage` hook
 
-## Key Directories
+## Key Directories & Files
 ```
 src/
 ├── data/          # All German language JSON data files (8 files)
-├── components/    # Reusable UI components (Layout, DataTable, SectionCard, PageHeader)
+├── components/    # Reusable UI components (Layout, DataTable, SectionCard, PageHeader, SmartSearch)
 ├── pages/         # Route-level page components (9 pages)
-├── hooks/         # Custom React hooks (useLanguage)
-└── utils/         # Helper functions
+├── hooks/         # Custom React hooks (useLanguage, useHighlightSection, useDebounce, useClickOutside)
+└── utils/         # Helper functions (slugify)
 memory-bank/       # KRIS documentation system
+vercel.json        # SPA routing rewrite rules
 ```
 
 ## Development Commands
@@ -57,6 +59,7 @@ npm run preview    # Preview production build
 - Build command: `npm run build`
 - Output directory: `dist`
 - No environment variables needed
+- SPA routing: `vercel.json` with catch-all rewrite (`/(.*) → /index.html`)
 
 ## Non-Negotiable Directives
 1. Read complete files before modifying
